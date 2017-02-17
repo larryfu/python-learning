@@ -1,0 +1,1894 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dropEffect="none" class="no-js no-auth ">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-ZA-Response-Id" content="000349cd48425f6f">
+<meta http-equiv="X-ZA-Experiment" content="default:None">
+
+<title>
+
+
+将数据交予阿里巴巴 ODPS 大数据分析服务，会不会导致信息外泄？ - 阿里巴巴集团 - 知乎
+
+
+</title>
+
+<meta name="apple-itunes-app" content="app-id=432274380, app-argument=zhihu://questions/24423738">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=https://www.zhihu.com/question/24423738">
+<meta id="znonce" name="znonce" content="8fe1241ff07a42dba70dfd25ad9c83d9">
+
+
+
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-152.87c020b9.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-120.496c913b.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-76.dcf79352.png" sizes="76x76">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-60.9911cffb.png" sizes="60x60">
+
+
+<link rel="shortcut icon" href="https://static.zhihu.com/static/favicon.ico" type="image/x-icon">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://static.zhihu.com/static/search.xml" title="知乎" />
+<link rel="stylesheet" href="https://static.zhihu.com/static/revved/-/css/z.e253a22e.css">
+
+
+
+<meta name="google-site-verification" content="FTeR0c8arOPKh8c5DYh_9uu98_zJbaWw53J-Sch9MTg" />
+
+
+
+<!--[if lt IE 9]>
+<script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
+<link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/static/components/respond/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/static/components/respond/cross-domain/respond.proxy.js"></script>
+<![endif]-->
+<script src="https://static.zhihu.com/static/revved/-/js/instant.14757a4a.js"></script>
+
+
+
+
+</head>
+
+<body class="zhi ">
+
+
+
+
+<div role="navigation" class="zu-top" data-za-module="TopNavBar">
+<div class="zg-wrap modal-shifting clearfix" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_zhihu_logo">知乎</a>
+
+
+
+<ul class="topnav-noauth clearfix">
+<li>
+<a href="javascript:;" class="js-signup-noauth"><i class="zg-icon zg-icon-dd-home"></i>注册知乎</a>
+</li>
+<li>
+<a href="javascript:;" class="js-signin-noauth">登录</a>
+</li>
+</ul>
+
+
+
+<button class="zu-top-add-question" id="zu-top-add-question">提问</button>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+
+
+
+<input type="hidden" name="type" value="content">
+<label for="q" class="hide-text">知乎搜索</label><input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" maxlength="100" placeholder="搜索你感兴趣的内容...">
+<button type="submit" class="zu-top-search-button"><span class="hide-text">搜索</span><span class="sprite-global-icon-magnifier-dark"></span></button>
+</form>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-nav-home">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_home">首页</a>
+</li>
+
+
+
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">话题</a>
+</li>
+
+<li class="zu-top-nav-li " id="zh-top-nav-explore">
+<a class="zu-top-nav-link" href="/explore">发现</a>
+</li>
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&nbsp;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">消息</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">用户</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">赞同和感谢</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content message">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content user" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content thanks" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">查看全部 &raquo;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="通知设置" ><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="关闭" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-redirect-info" style="display:none"></div>
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-notification-summary" style="display:none;">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<span class="zu-global-notify-icon"></span>
+<ul class="zu-question-notify-wrap">
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="zg-wrap zu-main clearfix with-indention-votebar" itemscope itemtype="http://schema.org/Question" id="zh-single-question-page" data-urltoken="24423738" role="main">
+<div class="zu-main-content">
+<div class="zu-main-content-inner">
+
+
+<meta itemprop="isTopQuestion" content="false" />
+<meta itemprop="visitsCount" content="15134" />
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag"
+href="/topic/19551577"
+data-hovercard="t$b$19551577" data-token="19551577" data-topicid="454" data-za-element-name="Title">
+阿里巴巴集团
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19560108"
+data-hovercard="t$b$19560108" data-token="19560108" data-topicid="3307" data-za-element-name="Title">
+阿里云
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19740929"
+data-hovercard="t$b$19740929" data-token="19740929" data-topicid="63708" data-za-element-name="Title">
+大数据
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19831849"
+data-hovercard="t$b$19831849" data-token="19831849" data-topicid="96022" data-za-element-name="Title">
+大数据分析
+</a>
+
+<a class="zm-item-tag"
+href="/topic/20006063"
+data-hovercard="t$b$20006063" data-token="20006063" data-topicid="154071" data-za-element-name="Title">
+ODPS
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="false">
+<h2 class="zm-item-title">
+
+<span class="zm-editable-content">将数据交予阿里巴巴 ODPS 大数据分析服务，会不会导致信息外泄？</span>
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="1951370" data-action="/question/detail">
+
+<div class="zm-editable-content">如题，毕竟数据是需要放到阿里云的计算资源上面才能做相关分析的。</div>
+
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>添加评论
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>分享
+</a>
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+
+
+<div class="zh-answers-title clearfix">
+
+<div id="zh-answers-filter" class="Sorter">
+
+<span class="lbl">默认排序</span>
+<a class="lbl" href="/question/24423738?sort=created">按时间排序</a>
+
+<i class="zg-icon zg-icon-double-arrow"></i>
+</div>
+
+<h3 data-num="14" id="zh-question-answer-num">14 个回答</h3>
+</div>
+
+<div id="zh-question-answer-wrap" data-pagesize="10" class="zh-question-answer-wrapper" data-widget="navigable" data-navigable-options="{&quot;items&quot;: &quot;&gt;.zm-item-answer&quot;}" data-init="{&quot;params&quot;: {&quot;url_token&quot;: 24423738, &quot;pagesize&quot;: 10, &quot;offset&quot;: 0}, &quot;nodename&quot;: &quot;QuestionAnswerListV2&quot;}">
+
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemprop="topAnswer"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="6442403"
+data-atoken="27758338"
+data-collapsed="0"
+data-created="1404894032"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/27758338">
+<meta itemprop="answer-id" content="6442403">
+<meta itemprop="answer-url-token" content="27758338">
+<a class="zg-anchor-hidden" name="answer-6442403"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="javascript:;"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+<span class="name">知乎用户</span></span><span title="曾经的ODPS" class="bio">
+曾经的ODPS
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="3">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">3</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="shellc" data-entry-url="/question/24423738/answer/27758338">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+2014-08-27 <a data-hash="0413dc3d0dae7589b03a77b2f918b741" href="//www.zhihu.com/people/0413dc3d0dae7589b03a77b2f918b741" class="member_mention" data-editable="true" data-title="@pig pig" data-hovercard="p$b$0413dc3d0dae7589b03a77b2f918b741">@pig pig</a> <a data-hash="f792d8d8a7d3de7cd70a3e9ecd6ce5ee" href="//www.zhihu.com/people/f792d8d8a7d3de7cd70a3e9ecd6ce5ee" class="member_mention" data-editable="true" data-title="@王乐珩" data-hovercard="p$b$f792d8d8a7d3de7cd70a3e9ecd6ce5ee">@王乐珩</a> “阿里自己是否会偷看或利用这些数据” 这个问题，阿里官方的回答应该是斩钉截铁的：不会！ 像很多道德和法律问题一样，如果做有罪推定，是很难自证清白的。就好比我们说一个人会偷东西，这个人很难证明自己不会。 作为商业活…
+
+<a href="/question/24423738/answer/27758338" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+2014-08-27<br><a data-hash="0413dc3d0dae7589b03a77b2f918b741" href="//www.zhihu.com/people/0413dc3d0dae7589b03a77b2f918b741" class="member_mention" data-editable="true" data-title="@pig pig" data-hovercard="p$b$0413dc3d0dae7589b03a77b2f918b741">@pig pig</a><br><a data-hash="f792d8d8a7d3de7cd70a3e9ecd6ce5ee" href="//www.zhihu.com/people/f792d8d8a7d3de7cd70a3e9ecd6ce5ee" class="member_mention" data-editable="true" data-title="@王乐珩" data-hovercard="p$b$f792d8d8a7d3de7cd70a3e9ecd6ce5ee">@王乐珩</a><br>“阿里自己是否会偷看或利用这些数据” 这个问题，阿里官方的回答应该是斩钉截铁的：不会！<br>像很多道德和法律问题一样，如果做有罪推定，是很难自证清白的。就好比我们说一个人会偷东西，这个人很难证明自己不会。<br><br>作为商业活动的主体，公司在这个问题上，只能表明自己的态度、所做的技术和制度上的保障、所遵循的法律。除此之外，面对有罪推定的怀疑是无能为力的。<br><br>作为用户来说，怎么理解和怀疑都是自己的权利，选择信任与否是自己的自由。引申起来，面对今天所有的互联网、电信、甚至线下的服务用户都需要回答这个问题并做出判断。比如，我们去饭店吃饭，我们要怀疑饭店是否用了地沟油，但我们一般不会要求饭店证明自己没有用地沟油。面对这种问题如果太极端就可能应了那个成语：因噎废食。总之，用户根据服务方所做的承诺和自己所能承受的风险做出判断就好。<br><br>---以下为原答案------------------------------------------------------------------------------<br><br>注:本回答不是想得到一个确切的结论，只是分享一点知道的信息和自己的理解。<br><br>数据放到ODPS上做分析的话，阿里肯定是可以看到数据的，但是阿里不应该试图去解读用户数据，一来是因为服务协议不应该允许这样做，二来这个成本很高，用户的数据在ODPS里都是以数据库表的结构存在，要理解这些数据需要人为分析用户业务，而且用户数据的价值未必值得这么做。<br><br>所以，题主的问题可以等价于：将自己公司的数据上传到ODPS并进行分析是否会导致数据泄漏给除阿里之外的第三方？<br><br>ODPS通过API提供服务，包括数据上传、下载、计算，所以这些API就是用户和ODPS服务的边界。因为引入ODPS，用户自己的流程中也可能产生数据泄漏，比如管理问题，这就需要对现有流程做改造，保证能接触到数据的人在数据流入ODPS之前不会产生泄漏。接下来就可以分析ODPS本身。<br><br>从平台设计和技术实现角度说，ODPS比较充分的考虑了数据安全性，ODPS团队对于平台的优先级定义是数据安全性大于可用性大于规模的。具体包括但不限于:所有API请求都是经过认证的，认证基于阿里云账号;所有API请求都可以走https加密，包括数据上传、下载，防止网络窃听；所有请求都有细粒度的权限检查；用户提交的程序运行在沙箱中，这是对系统本身的保护也是对用户数据的保护。<br><br>当然，技术上的安全是相对的，没有绝对的安全。在系统存在漏洞，甚至管理存在漏洞的情况下都有可能导致数据泄漏，这个就得靠信心和SLA来保证了。把数据放到Google bigtable，Amazon S3也是一样的。<br><br>这个问题本身还有另一种理解，就是ODPS会不会导致阿里自己的数据泄漏。<br>阿里自己是有一部分数据包括关联公司的数据在ODPS上的，所以这部分数据的安全等级和外部用户的是一样的。<br><br><br>利益相关: 阿里员工，前ODPS团队成员
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="6442403-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2014-07-09" target="_blank" href="/question/24423738/answer/27758338">编辑于 2014-08-27</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>2 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="7049626"
+data-atoken="29166026"
+data-collapsed="0"
+data-created="1407942831"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/29166026">
+<meta itemprop="answer-id" content="7049626">
+<meta itemprop="answer-url-token" content="29166026">
+<a class="zg-anchor-hidden" name="answer-7049626"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">12</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/pig-pig-86" target="_blank" data-hovercard="p$t$pig-pig-86"
+
+><img src="https://pic1.zhimg.com/v2-7705d8d4a408f79e08da8599a5face84_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$pig-pig-86"
+target="_blank" href="/people/pig-pig-86"
+>pig pig</a></span><span title="开始学Java" class="bio">
+开始学Java
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="12">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">12</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="pig pig" data-entry-url="/question/24423738/answer/29166026">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+首先，阿里肯定有规定，来表示阿里公司不会偷看用户的数据。 其次，这也只是规定罢了，出于利益考虑，阿里公司或者其员工肯定也必须会查看或利用这些数据。 最后，阿里泄密的事情还少么？自己百度一下吧，一堆一堆的。 ---------- 更新：哟，<a href="http://www.zhihu.com/people/wang-le-heng" class="internal">王乐珩</a> 这货居…
+
+<a href="/question/24423738/answer/29166026" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+首先，阿里肯定有规定，来表示阿里公司不会偷看用户的数据。<br><br>其次，这也只是规定罢了，出于利益考虑，阿里公司或者其员工肯定也必须会查看或利用这些数据。<br><br>最后，阿里泄密的事情还少么？自己百度一下吧，一堆一堆的。<br>----------<br>更新：哟，<a href="http://www.zhihu.com/people/wang-le-heng" class="internal">王乐珩</a> 这货居然把我屏蔽了，哈哈，评论戳中了你们阿里巴巴的痛点了吧？
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="7049626-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2014-08-13" target="_blank" href="/question/24423738/answer/29166026">编辑于 2014-08-18</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>4 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="7009354"
+data-atoken="29065541"
+data-collapsed="0"
+data-created="1407747631"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/29065541">
+<meta itemprop="answer-id" content="7009354">
+<meta itemprop="answer-url-token" content="29065541">
+<a class="zg-anchor-hidden" name="answer-7009354"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">33</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="javascript:;"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+<span class="name">知乎用户</span></span><span title="https://job.alibaba.com/zhaopin/position_detail.htm?positionId=23140" class="bio">
+<a href="//link.zhihu.com/?target=https%3A//job.alibaba.com/zhaopin/position_detail.htm%3FpositionId%3D23140" class=" external" target="_blank" rel="nofollow noreferrer"><span class="invisible">https://</span><span class="visible">job.alibaba.com/zhaopin</span><span class="invisible">/position_detail.htm?positionId=23140</span><span class="ellipsis"></span><i class="icon-external"></i></a>
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="33">
+
+
+<span class="answer-tag">
+<span class="text">收录于 </span>
+
+
+<span class="text">编辑推荐</span>
+
+
+
+</span>
+
+
+<span class="zg-bull text">•</span><span class="voters text"><a href="#" class="more text"><span class="js-voteCount">33</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="secloud" data-entry-url="/question/24423738/answer/29065541">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+ODPS设计之初就是面向多租户，确保租户的数据安全是ODPS的必备功能之一。在ODPS系统的安全设计和实现上，ODPS的工程师们会遵循一些经过实践检验的安全设计原则（如Saltzer-Schroeder原则）。在常用密码算法及安全协议的设计和实现上，也会遵循业界相关标准…
+
+<a href="/question/24423738/answer/29065541" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+ODPS设计之初就是面向多租户，确保租户的数据安全是ODPS的必备功能之一。在ODPS系统的安全设计和实现上，ODPS的工程师们会遵循一些经过实践检验的安全设计原则（如Saltzer-Schroeder原则）。在常用密码算法及安全协议的设计和实现上，也会遵循业界相关标准（如PKCS-及FIPS-系列标准），并坚持最佳安全实践。<br><br>这里从如下几个方面来解刨一下ODPS的安全特性，让关心ODPS数据安全的读者有一个基本的了解。<br><br>1. API认证<br><br>认证是一个服务的安全入口。ODPS认证采用业界标准的API认证协议来实现，如HmacSHA1。ODPS还提供HTTP和HTTPS两种的EndPoint以满足用户对认证安全的不同要求。HTTP EndPoint是明文传输，那么HmacSHA1认证只能保证消息请求的真实性(Authenticity)和完整性(Integrity)，适合于对数据安全不太敏感的用户。HTTPS EndPoint则能提供更多的安全性，比如信道加密，抗重放攻击等。适合于对数据安全比较敏感的用户。<br><br>2. 访问控制<br><br>当你创建项目空间后，你就是项目空间的owner。一个项目空间只有一个owner，只有owner对项目空间有完全控制权限。你可以上传/下载数据、提交SQL进行数据处理。在没有你的授权的情况下，任何其他用户都无权访问你的项目空间。 注意，ODPS平台并没有超级管理员的角色，所以ODPS的开发、测试、运维同学都是没有权限看到用户数据的。有人会问了，通过ODPS背后的运维管理控制台也不能访问用户数据吗？的确不能。运维同学只有在获得内部授权之后，可以通过该控制台来执行一些运维管理类操作，比如停止一个有恶意行为的用户作业，但该控制台没有操作用户数据的权限。<br><br>ODPS产品面向的是企业级用户，所以提供了丰富的项目空间内的用户管理及授权功能，有兴趣的同学可以参考ODPS用户手册中的相关章节。ODPS访问控制粒度非常精细，比如你可以授权一个用户只能读某个table的部分columns，并且可以要求该用户只能在某个时间范围内、而且必须从指定的某些IP地址来进行访问。换句话说，一个企业主可以做到只允许其员工在公司内、在正常上班时间才能访问数据，下班回家就不允许访问了。<br><br>3. 数据流控制<br><br>ODPS设计之初就是要满足数据分享（或数据交换）的场景。所以，只要有授权，用户就可以非常方便的进行跨项目空间的数据访问。比如，在获得相应的访问权限之后，项目空间A中的作业可以直接处理项目空间B中的数据，而不必事先将数据从项目空间B中复制到项目空间A。<br><br>数据保护有两层含义，一是防止未授权的数据访问；二是防止获得授权的用户滥用数据。很多商用系统并不提供后一种数据安全保证。但在ODPS平台上，用户的这种担忧比较明显：用户希望能确保对自己的数据拥有控制权，而一旦授权他人读取，他人就可能会做复制数据，那么就相当于失去了对数据的控制权。<br><br>ODPS通过支持数据流控制来防止跨项目空间的数据复制。如果你想确保项目空间中的所有数据都不允许流出去，那么你可以打开项目空间的数据流控设置。你还可以设置项目空间的数据保护策略，以限制哪些数据可以流出到哪些项目空间。<br><br>4. 用户作业的隔离运行<br><br>ODPS支持用户提交各种类型的作业（如SQL/XLib/MR）。为了确保不同用户作业在运行时互不干扰，ODPS将用户作业的Worker进程运行在飞天 Container沙箱中。如果用户作业含有Java代码（比如UDF），那么飞天Container沙箱中的Worker进程启动JVM时，还会设置严格的Java 沙箱策略以限制UDF的运行时权限。<br><br>5. 作业运行时使用最小权限<br><br>最小权限原则是系统安全和容错设计的一个基本指导原则，即让每个任务在运行时使用刚好满足需要（不多也不少）的权限来执行。<br><br>ODPS的作业运行过程一般是这样：用户提交的SQL/XLib/MR作业会被调度到某一计算集群上运行，运行时每个作业一般对应一组并行跑的Worker进程，Worker进程一般会从数据集群上读数据、处理完成后最终会将数据写回到数据集群。举个例子来理解ODPS是如何遵循最小权限原则的。我们假设用户Alice被授权读访问一个项目空间下t1和t2两个table数据，但她提交的某个SQL只需要读t1的数据。在ODPS中，这个SQL对应的Worker进程在运行时就只能读t1对应的底层数据文件，而不会有更多的数据访问权限。<br><br>ODPS最小权限是依赖于底层的飞天分布式操作系统提供的Kerberos认证和Capability访问控制来实现的。Kerberos认证用于解决飞天底层服务模块之间的身份认证，Capability则用于解决底层服务模块之间的访问控制技术。这与上层ODPS所提供的认证和访问控制是完全正交的安全机制，对ODPS用户是完全透明的。<br><br>6. 数据访问审计<br><br>ODPS还提供精准的、细粒度的数据访问操作记录，并会长期保存。ODPS平台体系所依赖的功能服务模块非常之多，我们可以把它称之为底层服务栈。对于数据操作记录来说，ODPS会收集服务栈上的所有操作记录，从上层table/column级别的数据访问日志，一直到底层分布式文件系统上的数据操作日志。最底层分布式文件系统上处理的每一次数据访问请求，也都能追溯到是最上层的哪个项目空间中的哪个用户的哪个作业发起的数据访问。<br><br>有了服务栈上的各层操作审计之后，即使是内部攻击者（工程师或渗透到内部系统中的黑客）想从内部（绕过ODPS服务）直接访问底层分布式文件系统上的用户数据的话，也一定是可以从操作日志中被发现的。所以，通过数据访问审计，用户就可以准确的知道他在ODPS上的数据是否存在未授权的数据访问。<br><br>7. 风险控制<br><br>除了不同层面的防御机制之外，ODPS产品还会提供一套安全监控系统，用于监控用户作业及用户数据的安全活动，如AccessKey滥用，项目空间安全配置不当，用户代码运行时触犯安全策略，以及用户数据是否遭受异常访问等。<br><br>安全攻击防不胜防，所以ODPS会通过安全监控手段来及时发现问题，一旦发现安全问题则会启动相应的处理流程，尽可能将用户损失降到最低。<br><br><br>结语：虽然没有绝对的安全，但安全性在ODPS产品设计和实现中享有最高优先级。ODPS团队已经汇聚了多领域的安全专家，以保障用户数据安全。同时，我们欢迎更多安全专家的加入，共同增强ODPS的数据安全。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="7009354-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2014-08-11" target="_blank" href="/question/24423738/answer/29065541">编辑于 2014-08-14</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>11 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="6438292"
+data-atoken="27748130"
+data-collapsed="0"
+data-created="1404879181"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/27748130">
+<meta itemprop="answer-id" content="6438292">
+<meta itemprop="answer-url-token" content="27748130">
+<a class="zg-anchor-hidden" name="answer-6438292"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">2</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/wang-le-heng" target="_blank" data-hovercard="p$t$wang-le-heng"
+
+><img src="https://pic3.zhimg.com/78b1a31a4921e88e73bdd9f66e826112_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$wang-le-heng"
+target="_blank" href="/people/wang-le-heng"
+>王乐珩</a></span><span title="一个软件工程师" class="bio">
+一个软件工程师
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="2">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">2</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="王乐珩" data-entry-url="/question/24423738/answer/27748130">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+首先，从根子上而言，你是否信任服务提供商？这个问题的答案很简单，如果发生服务商窃取数据的事件，它的损失是不是比你大。以前回答过一个问题 <a href="http://www.zhihu.com/question/20262660/answer/18058121" class="internal">租用服务器、空间、VPS、云设施等是不是无法避免被服务提供商窃取数据？</a>可以参考。 阿里云产品官网有一个安全…
+
+<a href="/question/24423738/answer/27748130" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+首先，从根子上而言，你是否信任服务提供商？这个问题的答案很简单，如果发生服务商窃取数据的事件，它的损失是不是比你大。以前回答过一个问题 <a href="http://www.zhihu.com/question/20262660/answer/18058121" class="internal">租用服务器、空间、VPS、云设施等是不是无法避免被服务提供商窃取数据？</a>可以参考。<br><br><p>阿里云产品官网有一个安全白皮书，供你参考： <a href="//link.zhihu.com/?target=http%3A//imgs-storage.cdn.aliyuncs.com/help/yunanquan/%25E9%2598%25BF%25E9%2587%258C%25E4%25BA%2591%25E5%25AE%2589%25E5%2585%25A8%25E7%2599%25BD%25E7%259A%25AE%25E4%25B9%25A6%25EF%25BC%2588%25E4%25B8%25AD%25E6%2596%2587%25E7%2589%2588%25EF%25BC%2589%25E5%258F%2591%25E5%25B8%2583%25E7%25A8%25BF2014%25E5%25B9%25B41%25E6%259C%2588.pdf%3Fspm%3D5176.7150518.1996836753.5.wqVBVP%26file%3D%25E9%2598%25BF%25E9%2587%258C%25E4%25BA%2591%25E5%25AE%2589%25E5%2585%25A8%25E7%2599%25BD%25E7%259A%25AE%25E4%25B9%25A6%25EF%25BC%2588%25E4%25B8%25AD%25E6%2596%2587%25E7%2589%2588%25EF%25BC%2589%25E5%258F%2591%25E5%25B8%2583%25E7%25A8%25BF2014%25E5%25B9%25B41%25E6%259C%2588.pdf" class=" wrap external" target="_blank" rel="nofollow noreferrer">http://imgs-storage.cdn.aliyuncs.com/help/yunanquan/%E9%98%BF%E9%87%8C%E4%BA%91%E5%AE%89%E5%85%A8%E7%99%BD%E7%9A%AE%E4%B9%A6%EF%BC%88%E4%B8%AD%E6%96%87%E7%89%88%EF%BC%89%E5%8F%91%E5%B8%83%E7%A8%BF2014%E5%B9%B41%E6%9C%88.pdf<i class="icon-external"></i></a></p>然后，ODPS做了大量安全和权限方面的工作，我不算最了解的，稍后可以请专家上来讲一下。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="6438292-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2014-07-09" target="_blank" href="/question/24423738/answer/27748130">编辑于 2014-08-12</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>4 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="41050520"
+data-atoken="113927916"
+data-collapsed="0"
+data-created="1469802100"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/113927916">
+<meta itemprop="answer-id" content="41050520">
+<meta itemprop="answer-url-token" content="113927916">
+<a class="zg-anchor-hidden" name="answer-41050520"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="javascript:;"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+<span class="name">知乎用户</span></span><span title="国米/鸟叔/罗尼/BI/阿杜粉丝" class="bio">
+国米/鸟叔/罗尼/BI/阿杜粉丝
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="雷蒙德shawn" data-entry-url="/question/24423738/answer/113927916">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+如果没人惜得看你的数据，就不会外泄。如果有人觉得有用，能卖钱，就一定外泄。 阿里支付宝自己的数据都被人弄出去过，能保护你的数据，你信吗？反正我是不信。
+
+<a href="/question/24423738/answer/113927916" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+如果没人惜得看你的数据，就不会外泄。如果有人觉得有用，能卖钱，就一定外泄。<br>阿里支付宝自己的数据都被人弄出去过，能保护你的数据，你信吗？反正我是不信。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="41050520-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24423738/answer/113927916">发布于 2016-07-29</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="6439007"
+data-atoken="27749952"
+data-collapsed="0"
+data-created="1404881828"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/27749952">
+<meta itemprop="answer-id" content="6439007">
+<meta itemprop="answer-url-token" content="27749952">
+<a class="zg-anchor-hidden" name="answer-6439007"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">2</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/gui-neng" target="_blank" data-hovercard="p$t$gui-neng"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$gui-neng"
+target="_blank" href="/people/gui-neng"
+>桂能</a></span><span title="刘涛脑残粉" class="bio">
+刘涛脑残粉
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="2">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">2</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="桂能" data-entry-url="/question/24423738/answer/27749952">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+看你这个外泄是怎么定义，外泄最重要的问题是要分清楚泄密对象，你的数据放到阿里去，那么阿里一定知道你的数据的，如果这个算外泄，那么不可避免，那如果是除了阿里之外的第三者，这个就要看阿里的安全做的如何了，原则上阿里的安全一定比自己做靠谱，但是…
+
+<a href="/question/24423738/answer/27749952" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+看你这个外泄是怎么定义，外泄最重要的问题是要分清楚泄密对象，你的数据放到阿里去，那么阿里一定知道你的数据的，如果这个算外泄，那么不可避免，那如果是除了阿里之外的第三者，这个就要看阿里的安全做的如何了，原则上阿里的安全一定比自己做靠谱，但是如果您的数据不想给阿里，自己搭一个hadoop集群最靠谱，最好这个集群不上网，只能内部访问
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="6439007-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24423738/answer/27749952">发布于 2014-07-09</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="38613330"
+data-atoken="107864016"
+data-collapsed="0"
+data-created="1466895124"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/107864016">
+<meta itemprop="answer-id" content="38613330">
+<meta itemprop="answer-url-token" content="107864016">
+<a class="zg-anchor-hidden" name="answer-38613330"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">1</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/bron-jeo" target="_blank" data-hovercard="p$t$bron-jeo"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$bron-jeo"
+target="_blank" href="/people/bron-jeo"
+>bron jeo</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="1">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">1</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="bron jeo" data-entry-url="/question/24423738/answer/107864016">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+<a data-hash="0413dc3d0dae7589b03a77b2f918b741" href="//www.zhihu.com/people/0413dc3d0dae7589b03a77b2f918b741" class="member_mention" data-editable="true" data-title="@pig pig" data-hovercard="p$b$0413dc3d0dae7589b03a77b2f918b741">@pig pig</a> <a data-hash="f792d8d8a7d3de7cd70a3e9ecd6ce5ee" href="//www.zhihu.com/people/f792d8d8a7d3de7cd70a3e9ecd6ce5ee" class="member_mention" data-editable="true" data-title="@王乐珩" data-hovercard="p$b$f792d8d8a7d3de7cd70a3e9ecd6ce5ee">@王乐珩</a> @<a class="internal" href="https://www.zhihu.com/people/shellc">shellc</a> 1- 说实话，我不相信中国公司的操守，尤其是在巨大的利益与诱惑之前。 2- 更重要的是，要考虑你的数据是否敏感，是否重要。不敏感，不重要的数据可以用啊。 <b>Tips：</b>我之前也使用亚马逊的大数据分析服务，我把那些敏感，重要信息都…
+
+<a href="/question/24423738/answer/107864016" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+<a data-hash="0413dc3d0dae7589b03a77b2f918b741" href="//www.zhihu.com/people/0413dc3d0dae7589b03a77b2f918b741" class="member_mention" data-editable="true" data-title="@pig pig" data-hovercard="p$b$0413dc3d0dae7589b03a77b2f918b741">@pig pig</a><br><a data-hash="f792d8d8a7d3de7cd70a3e9ecd6ce5ee" href="//www.zhihu.com/people/f792d8d8a7d3de7cd70a3e9ecd6ce5ee" class="member_mention" data-editable="true" data-title="@王乐珩" data-hovercard="p$b$f792d8d8a7d3de7cd70a3e9ecd6ce5ee">@王乐珩</a><br>@<a class="internal" href="https://www.zhihu.com/people/shellc">shellc</a><br><br>1- 说实话，我不相信中国公司的操守，尤其是在巨大的利益与诱惑之前。<br><br>2- 更重要的是，要考虑你的数据是否敏感，是否重要。不敏感，不重要的数据可以用啊。<br><br><b>Tips：</b>我之前也使用亚马逊的大数据分析服务，我把那些敏感，重要信息都删除或者做了保护，<br>再发给大数据分析服务。<br><br>3- 如果公司有实力，就自己建吧。我们公司就是在自己的数据中心上加了私有云。<br><br><b>PS. 有人会问我：为什么不太相信中国公司的操守，却相信国外公司？</b><br><br>- 国外有完善的法律，更重要的是国外公司不太敢违法，或玩擦边球<br>- 你相信在一个连婴儿奶粉都能出事的时代，我们数据安全的那点破事有人会关心吗？
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="38613330-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2016-06-26" target="_blank" href="/question/24423738/answer/107864016">编辑于 2016-06-26</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="47833842"
+data-atoken="130795870"
+data-collapsed="0"
+data-created="1478828430"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/130795870">
+<meta itemprop="answer-id" content="47833842">
+<meta itemprop="answer-url-token" content="130795870">
+<a class="zg-anchor-hidden" name="answer-47833842"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/xue-man-yun-tian" target="_blank" data-hovercard="p$t$xue-man-yun-tian"
+
+><img src="https://pic3.zhimg.com/v2-6112711084473098e09ef00ab43ac612_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$xue-man-yun-tian"
+target="_blank" href="/people/xue-man-yun-tian"
+>雪漫云天</a></span><span title="IT运维/云计算" class="bio">
+IT运维/云计算
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="雪漫云天" data-entry-url="/question/24423738/answer/130795870">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+一般来说，应该是安全的，密级较高的数据还是建议放到本地
+
+<a href="/question/24423738/answer/130795870" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+一般来说，应该是安全的，密级较高的数据还是建议放到本地
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="47833842-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24423738/answer/130795870">发布于 2016-11-11</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="43573905"
+data-atoken="120210541"
+data-collapsed="0"
+data-created="1472813934"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/24423738/answer/120210541">
+<meta itemprop="answer-id" content="43573905">
+<meta itemprop="answer-url-token" content="120210541">
+<a class="zg-anchor-hidden" name="answer-43573905"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/mi-ti-88" target="_blank" data-hovercard="p$t$mi-ti-88"
+
+><img src="https://pic2.zhimg.com/79bbae4022e15edc6e962745e33209a1_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$mi-ti-88"
+target="_blank" href="/people/mi-ti-88"
+>米提</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="米提" data-entry-url="/question/24423738/answer/120210541">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+这取决于你的数据有没有价值呀。
+
+<a href="/question/24423738/answer/120210541" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+这取决于你的数据有没有价值呀。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="43573905-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24423738/answer/120210541">发布于 2016-09-02</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="43557729"
+data-atoken="120170290"
+data-collapsed="0"
+data-created="1472799023"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="0"
+
+>
+<link itemprop="url" href="/question/24423738/answer/120170290">
+<meta itemprop="answer-id" content="43557729">
+<meta itemprop="answer-url-token" content="120170290">
+<a class="zg-anchor-hidden" name="answer-43557729"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1951370" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/24423738/answer/120170290">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+阿里数据安全要求所有阿里员工不能使用第三方云存储服务(网络直接屏蔽)，包括不限于印象笔记、百度云、有道笔记、微软云、google docs等等，作为中国云计算领头羊，对云服务的态度尚且如此，中国云服务安全信任环境的构建还任重道远。
+
+<a href="/question/24423738/answer/120170290" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+阿里数据安全要求所有阿里员工不能使用第三方云存储服务(网络直接屏蔽)，包括不限于印象笔记、百度云、有道笔记、微软云、google docs等等，作为中国云计算领头羊，对云服务的态度尚且如此，中国云服务安全信任环境的构建还任重道远。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="43557729-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/24423738/answer/120170290">发布于 2016-09-02</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="0">
+<meta name="disableCopyAvatar" content="https://pic2.zhimg.com/aadd7b895_m.jpg">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-6" target="_blank" class="meta-item copyright">禁止转载</a>
+
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div id="zh-question-collapsed-link" class="zu-question-collap-title" style="display:none" >
+<a href="javascript:;" name="expand" class="zg-link-gray" id="zh-question-collapsed-switcher">
+<span id="zh-question-collapsed-num">0</span> 个回答被折叠
+</a>
+（<a target="_blank" href="/question/20120168" class="zg-link-gray">为什么？</a>）
+</div>
+<div id="zh-question-collapsed-wrap" class="zh-question-answer-wrapper" style="display:none"></div>
+<a name="draft"></a>
+<div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
+<div class="zm-editable-tip"></div>
+<div class="zm-editable-content"></div>
+</div>
+<!-- 版权演示 -->
+
+<script type="text/x-template" id="copyright-demo-template">
+<article>
+
+<section>
+<p class="copyright-demo-title"> 这是你的回答正文 </p>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section>
+<p class="copyright-demo-title"> 当其他人想复制你的一段回答 </p>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region1">
+<span class="copyright-ico-indicator" id="copyright-demo-indicator"></span>
+</div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region2"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region3"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region4"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section id="copyright-demo-frame3">
+<p class="copyright-demo-title copyright-demo-effect"> 复制将受限，同时会弹出提醒 </p>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region"></div>
+<span class="copyright-ico-pointer copyright-demo-pointer"></span>
+</section>
+</article>
+</script>
+
+
+<script type="text/template" class="oauth-success-template--wechat">
+<div class="oauth-success oauth-success--wechat">
+<img src="/static/img/zhihu_wechat.png" class="oauth-success-image">
+<h2 class="oauth-success-title">成功绑定微信帐号</h2>
+<p class="oauth-success-tip">下次登录知乎可直接使用「微信快捷登录」</p>
+</div>
+</script>
+
+
+</div>
+</div>
+
+
+<div class="zu-main-sidebar" data-za-module="RightSideBar">
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div class="SignFlow SignFlow--bordered" id="SidebarSignFlow">
+<div class="SignFlow-panel">
+<div class="title register">
+<h1>加入知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view register SignupForm" data-za-module="SignUpForm">
+<form action="/register/email" method="POST">
+<div class="input-wrapper">
+<input type="text" name="fullname" aria-label="姓名" data-placeholder="姓名" required>
+</div>
+<div class="input-wrapper">
+
+<input type="text" name="phone_num" class="account" aria-label="手机号（仅支持中国大陆）" data-placeholder="手机号（仅支持中国大陆）" required>
+
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" hidden> 
+<input type="password" name="password" aria-label="密码" data-placeholder="密码（不少于 6 位）" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="注册" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<span>已有帐号？<a href="#" class="switch-to-login">登录</a></span>
+</div>
+</form>
+</div>
+</div>
+<div class="SignFlow-panel" hidden>
+<div class="LoginForm">
+<div class="title login">
+<h1>登录知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view login" data-za-module="SignInForm">
+<form method="POST">
+<div class="input-wrapper">
+<input type="text" name="account" class="account" aria-label="手机号或邮箱" placeholder="手机号或邮箱" required>
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" name="password" aria-label="密码" placeholder="密码" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="登录" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<label class="remember-me"><input type="checkbox" name="remember_me" checked value="true">记住我</label>
+<span class="middot">·</span>
+<button class="unable-login" type="button">无法登录？</button>
+<button type="button" class="js-show-sns-buttons is-visible">社交帐号登录</button>
+<div class="sns-buttons">
+<button type="button" class="wechat"><span class="ico sprite-global-icon-wechat-gray"></span>微信</button>
+<button type="button" class="weibo"><span class="ico sprite-global-icon-weibo-gray"></span>微博</button>
+<button type="button" class="qq"><span class="ico sprite-global-icon-qq-gray"></span>QQ</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-side-section">
+<div class="DownloadApp">
+<button class="DownloadApp-button">
+<span class="sprite-global-icon-qrcode"></span>
+下载知乎 App
+</button>
+</div>
+</div>
+
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner zg-gray-normal" id="zh-question-side-header-wrap">
+<button data-follow="q:m:button" class="follow-button zg-follow zg-btn-green" data-id="1951370">关注问题</button>
+
+177
+人关注该问题
+
+</div>
+</div>
+
+
+<div class="shameimaru-placeholder" data-loc="question_up" data-params='{&quot;question_token&quot;: 24423738}'></div>
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div id="zh-question-related-questions" class="zh-question-related-questions clearfix" data-za-module="RelatedQuestions">
+
+<a class="zg-right next">换一换</a>
+
+<h3>相关问题</h3>
+<ul itemprop="relatedQuestion" itemscope itemtype="http://schema.org/ItemList">
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/24106334" data-id="1824312" data-za-element-name="Title">
+如何评价 UC 并入阿里巴巴？
+</a> <span class="num">19 个回答</span><meta itemprop="followerCount" content="1617" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21857746" data-id="923972" data-za-element-name="Title">
+阿里巴巴为什么突然强推「来往」？怎么理解阿里巴巴对移动互联网的焦虑情绪？
+</a> <span class="num">104 个回答</span><meta itemprop="followerCount" content="2565" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/20165098" data-id="246175" data-za-element-name="Title">
+未来阿里、腾讯、百度三巨头谁会独领风骚？
+</a> <span class="num">241 个回答</span><meta itemprop="followerCount" content="5444" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21367471" data-id="727646" data-za-element-name="Title">
+2013 年 7 月，淘宝数据库被拖是真的吗？
+</a> <span class="num">55 个回答</span><meta itemprop="followerCount" content="1338" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21211735" data-id="665435" data-za-element-name="Title">
+阿里巴巴推出余额宝对银行会有什么影响？
+</a> <span class="num">29 个回答</span><meta itemprop="followerCount" content="733" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/25158759" data-id="2245569" data-za-element-name="Title">
+如何评价阿里云多隆成为阿里巴巴集团合伙人？
+</a> <span class="num">26 个回答</span><meta itemprop="followerCount" content="3577" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/22050646" data-id="1001120" data-za-element-name="Title">
+2013 年 12 月 3 日起，电脑版支付宝转账将收取手续费，这样的策略调整是出于什么原因？
+</a> <span class="num">39 个回答</span><meta itemprop="followerCount" content="747" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/23177563" data-id="1452335" data-za-element-name="Title">
+与阿里巴巴相比，腾讯的人才结构有哪些不同？
+</a> <span class="num">25 个回答</span><meta itemprop="followerCount" content="7935" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/24670830" data-id="2050350" data-za-element-name="Title">
+上汽和阿里巴巴合作的「互联网汽车」前景如何？
+</a> <span class="num">36 个回答</span><meta itemprop="followerCount" content="416" />
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+<div class="zm-side-section" data-za-module="RelatedLives">
+<div class="SidebarListNav SidebarListNav--noFollowLink zm-side-section-inner">
+<h3>相关 Live 推荐 ⚡️</h3>
+<ul class="SidebarListNav-list">
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/803323017378811904" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic1.zhimg.com/v2-38fd9dd104260f1bb1983df38204f7ac_s.jpg" srcset="https://pic1.zhimg.com/v2-38fd9dd104260f1bb1983df38204f7ac_xs.jpg 2x" alt="INSEAD 与湖畔大学" />
+<span class="SidebarListNav-label">
+INSEAD 与湖畔大学
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/812019068583440384" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic3.zhimg.com/v2-15907fd717e9975427bc1ef810dc3d2a_s.jpg" srcset="https://pic3.zhimg.com/v2-15907fd717e9975427bc1ef810dc3d2a_xs.jpg 2x" alt="实用统计分析与 R 入门（一）" />
+<span class="SidebarListNav-label">
+实用统计分析与 R 入门（一）
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/813022786439225344" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic2.zhimg.com/57a7f66198db0f0220603237c1713395_s.jpg" srcset="https://pic2.zhimg.com/57a7f66198db0f0220603237c1713395_xs.jpg 2x" alt="高端数据科学家养成" />
+<span class="SidebarListNav-label">
+高端数据科学家养成
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/794231822723723264" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic4.zhimg.com/v2-4739d5712fcb1d08e919183e7b007013_s.jpg" srcset="https://pic4.zhimg.com/v2-4739d5712fcb1d08e919183e7b007013_xs.jpg 2x" alt="如何通过数据分析提升互联网流量的价值？" />
+<span class="SidebarListNav-label">
+如何通过数据分析提升互联网流量的价值？
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/792757899586846720" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic3.zhimg.com/616af5cfa_s.jpg" srcset="https://pic3.zhimg.com/616af5cfa_xs.jpg 2x" alt="「能源大数据」如何玩转光伏大数据" />
+<span class="SidebarListNav-label">
+「能源大数据」如何玩转光伏大数据
+</span>
+</a>
+</li>
+
+</ul>
+</div>
+</div>
+
+
+<div class="shameimaru-placeholder" data-loc="question_down" data-params='{&quot;question_token&quot;: 24423738}'></div>
+
+</div>
+
+
+</div>
+
+
+<div id="zh-footer" class="zh-footer">
+<div class="content zg-wrap clearfix">
+<ul>
+
+<li><a href="https://liukanshan.zhihu.com" target="_blank">刘看山</a></li>
+
+<li><a href="/app" target="_blank">移动应用</a></li>
+<li><a href="/careers">加入知乎</a></li>
+<li><a href="/terms" target="_blank">知乎协议</a></li>
+<li><a href="/jubao" target="_blank">举报投诉</a></li>
+<li><a href="/contact">联系我们</a></li>
+
+</ul>
+
+<span class="copy">&copy; 2017 知乎</span>
+
+</div>
+</div>
+
+<script type="text/json" class="json-inline" data-name="guiders2">{}</script>
+<script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
+<script type="text/json" class="json-inline" data-name="user_status">[null,null,false]</script>
+<script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
+<script type="text/json" class="json-inline" data-name="permissions">[]</script>
+
+
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1487289195000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+
+<script type="text/json" class="json-inline" data-name="ra-urls">{"Copyright":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Copyright.98ac6609.js","PayUIApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PayUIApp.ca78ba78.js","CouponApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CouponApp.66b486a6.js","PaymentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PaymentApp.7f16d61c.js","Community":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Community.a79a5745.js","Report":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Report.26635627.js","OrgOpHelp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/OrgOpHelp.f8c794ed.js","common":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/common.a4dd3236.js","BalanceApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/BalanceApp.14e3a013.js","AnswerWarrant":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/AnswerWarrant.97f134aa.js","CommentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CommentApp.7556991d.js"}</script>
+
+<script type="text/json" class="json-inline" data-name="current_question">{"status":"normal","editPermission":false,"qid":1951370,"askAboutMember":0,"isEditLocked":false,"detailEditReasonRequired":true,"isAnon":0,"showInvitePanel":false,"isOrg":false,"isLocked":0,"urlToken":24423738}</script>
+<script type="text/json" class="json-inline" data-name="current_question_owner">false</script>
+<script type="text/json" class="json-inline" data-name="draft">[]</script>
+<script type="text/json" class="json-inline" data-name="my_answer">{}</script>
+<script type="text/json" class="json-inline" data-name="current_question_bio">{"selected_bio":null,"type":null,"value":""}</script>
+
+<script type="text/json" class="json-inline" data-name="redirect_to">""</script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/vendor.cb14a042.js"></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/base.84f61660.js"></script>
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/common.9ec832a9.js"></script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/richtexteditor.ba48c7a1.js" async></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/page-main.30e64749.js"></script>
+<meta name="entry" content="ZH.entrySQ" data-module-id="page-main">
+
+<script type="text/zscript" znonce="8fe1241ff07a42dba70dfd25ad9c83d9"></script>
+
+<input type="hidden" name="_xsrf" value="d1afa35370a6e84d02ccb38e096e4103"/>
+</body>
+</html>

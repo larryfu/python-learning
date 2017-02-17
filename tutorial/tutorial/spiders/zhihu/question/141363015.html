@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dropEffect="none" class="no-js no-auth ">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-ZA-Response-Id" content="00170ca7d05718d0">
+<meta http-equiv="X-ZA-Experiment" content="default:None">
+
+<title>为什么在中国搞不出 Spark 和 Hadoop 这种东西？ - 姚冬的回答 - 知乎</title>
+
+<meta name="apple-itunes-app" content="app-id=432274380, app-argument=zhihu://answers/141363015">
+
+<meta property="og:description" content="上周去深圳参加了ECUG的十周年盛会，工程师的盛会是没有红毯没有香槟的，只有纯净水和小面包，然后就是几百人坐下来听技术大牛们做分享。 ECUG是个民间组织，关注的是云计算前沿技术的经验分享和分布式开发、运维的最佳实践。 Home - 实效云计算用户组(ECUG) …" />
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=https://www.zhihu.com/question/35548022/answer/141363015">
+<meta id="znonce" name="znonce" content="f1a313a3185245e0ade3a14690c554f7">
+
+
+
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-152.87c020b9.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-120.496c913b.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-76.dcf79352.png" sizes="76x76">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-60.9911cffb.png" sizes="60x60">
+
+
+<link rel="shortcut icon" href="https://static.zhihu.com/static/favicon.ico" type="image/x-icon">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://static.zhihu.com/static/search.xml" title="知乎" />
+<link rel="stylesheet" href="https://static.zhihu.com/static/revved/-/css/z.e253a22e.css">
+
+
+
+<meta name="google-site-verification" content="FTeR0c8arOPKh8c5DYh_9uu98_zJbaWw53J-Sch9MTg" />
+
+
+
+<!--[if lt IE 9]>
+<script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
+<link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/static/components/respond/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/static/components/respond/cross-domain/respond.proxy.js"></script>
+<![endif]-->
+<script src="https://static.zhihu.com/static/revved/-/js/instant.14757a4a.js"></script>
+
+
+
+
+</head>
+
+<body class="zhi ">
+
+
+
+
+<div role="navigation" class="zu-top" data-za-module="TopNavBar">
+<div class="zg-wrap modal-shifting clearfix" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_zhihu_logo">知乎</a>
+
+
+
+<ul class="topnav-noauth clearfix">
+<li>
+<a href="javascript:;" class="js-signup-noauth"><i class="zg-icon zg-icon-dd-home"></i>注册知乎</a>
+</li>
+<li>
+<a href="javascript:;" class="js-signin-noauth">登录</a>
+</li>
+</ul>
+
+
+
+<button class="zu-top-add-question" id="zu-top-add-question">提问</button>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+
+
+
+<input type="hidden" name="type" value="content">
+<label for="q" class="hide-text">知乎搜索</label><input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" maxlength="100" placeholder="搜索你感兴趣的内容...">
+<button type="submit" class="zu-top-search-button"><span class="hide-text">搜索</span><span class="sprite-global-icon-magnifier-dark"></span></button>
+</form>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-nav-home">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_home">首页</a>
+</li>
+
+
+
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">话题</a>
+</li>
+
+<li class="zu-top-nav-li " id="zh-top-nav-explore">
+<a class="zu-top-nav-link" href="/explore">发现</a>
+</li>
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&nbsp;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">消息</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">用户</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">赞同和感谢</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content message">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content user" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content thanks" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">查看全部 &raquo;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="通知设置" ><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="关闭" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+<div class="zg-wrap zu-main clearfix with-indention-votebar"  role="main">
+<div class="zu-main-content">
+<div class="zu-main-content-inner">
+
+
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag"
+href="/topic/19552071"
+data-hovercard="t$b$19552071" data-token="19552071" data-topicid="619" data-za-element-name="Title">
+分布式计算
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19563390"
+data-hovercard="t$b$19563390" data-token="19563390" data-topicid="4373" data-za-element-name="Title">
+Hadoop
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19740929"
+data-hovercard="t$b$19740929" data-token="19740929" data-topicid="63708" data-za-element-name="Title">
+大数据
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19942170"
+data-hovercard="t$b$19942170" data-token="19942170" data-topicid="132767" data-za-element-name="Title">
+Spark
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="false">
+<h2 class="zm-item-title">
+
+<a href="/question/35548022">
+为什么在中国搞不出 Spark 和 Hadoop 这种东西？
+</a>
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="6425875" data-action="/question/detail">
+
+<div class="zm-editable-content">先问是不是，再问为什么，不要耍流氓！<br>国内hadoop类似产品不止一个吧，估计还胜过现在的hadoop，现在hadoop可不是啥核心科技<br>----------------------------------<br>我是一名CS学生，我想听听对题目问题的看法。 我很好奇是哪些本质的东西决定了在美国搞出了这些东西，在中国就没有出现。我能想到的原因就是：我觉得国内的互联网环境更关心怎么赚钱怎么快速迭代产品，而对于技术创新投入不够。</div>
+
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>4 条评论
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>分享
+</a>
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+
+
+<div class="zh-answers-title">
+<h3><a href="/question/35548022" class="zg-link-litblue">查看全部 104 个回答</a></h3>
+</div>
+
+<div id="zh-question-answer-wrap" class="zh-question-answer-wrapper autohide-false"
+data-widget="navigable" data-navigable-options="{&quot;items&quot;:&quot;&gt;.zm-item-answer&quot;}"
+style="border-bottom:none;">
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="52073443"
+data-atoken="141363015"
+data-collapsed="0"
+data-created="1484622485"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/35548022/answer/141363015">
+<meta itemprop="answer-id" content="52073443">
+<meta itemprop="answer-url-token" content="141363015">
+<a class="zg-anchor-hidden" name="answer-52073443"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">616</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/yao-dong-27" target="_blank" data-hovercard="p$t$yao-dong-27"
+
+><img src="https://pic3.zhimg.com/45e5c4b16_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$yao-dong-27"
+target="_blank" href="/people/yao-dong-27"
+>姚冬</a><span class="icon icon-badge-best_answerer icon-badge" data-tooltip="s$b$优秀回答者"></span></span><span class="badge-summary"><a href="/people/yao-dong-27#hilightbadge" target="_blank">程序员、编程、C++话题优秀回答者</a></span>
+
+
+
+<span title="填坑侠" class="bio">
+填坑侠
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="616">
+
+
+<span class="answer-tag">
+<span class="text">收录于 </span>
+
+
+<span class="text">编辑推荐</span>
+
+
+
+</span>
+
+
+<span class="zg-bull text">•</span><span class="voters text"><a href="#" class="more text"><span class="js-voteCount">616</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6425875" data-action="/answer/content" data-author-name="姚冬" data-entry-url="/question/35548022/answer/141363015">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+上周去深圳参加了ECUG的十周年盛会，工程师的盛会是没有红毯没有香槟的，只有纯净水和小面包，然后就是几百人坐下来听技术大牛们做分享。 ECUG是个民间组织，关注的是云计算前沿技术的经验分享和分布式开发、运维的最佳实践。 <a href="//link.zhihu.com/?target=http%3A//www.ecug.org/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Home - 实效云计算用户组(ECUG)<i class="icon-external"></i></a>…
+
+<a href="/question/35548022/answer/141363015" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+上周去深圳参加了ECUG的十周年盛会，工程师的盛会是没有红毯没有香槟的，只有纯净水和小面包，然后就是几百人坐下来听技术大牛们做分享。<br><br>ECUG是个民间组织，关注的是云计算前沿技术的经验分享和分布式开发、运维的最佳实践。<br><a href="//link.zhihu.com/?target=http%3A//www.ecug.org/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Home - 实效云计算用户组(ECUG)<i class="icon-external"></i></a><br><br>每年会选在一个地方举行，今年是在深圳举办，赞助方还是七牛云存储。会议内容就是请各个领域的专家做技术分享。<br><br>两天的时间里我听了十多个演讲，其中有两个给我留下深刻印象，一个是 刘奇老师的TiDB，一个是Luke Han老师的Apache Kylin。<br><br>TiDB是分布式数据库，Kylin是分布式分析引擎，都是属于大数据云计算领域的基础设施项目。<br><br>这两个项目有很多共同点：<br>他们都是中国人主导的项目，由中国人发起，设计，运营，并且贡献了大多数代码，<br>他们都是开源的全球化项目，代码都是开放的，有中英文文档，项目的用户和参与者来自世界各个国家。<br>他们都是由商业化的公司在运作的项目<br>TiDB是 <a href="//link.zhihu.com/?target=http%3A//pingcap.com/" class=" wrap external" target="_blank" rel="nofollow noreferrer">PingCAP<i class="icon-external"></i></a><br>Kylin是<a href="//link.zhihu.com/?target=http%3A//kyligence.io/en/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Kyligence Home - Kyligence Inc.<i class="icon-external"></i></a>，同时它还是Apache基金会的项目<a href="//link.zhihu.com/?target=http%3A//kylin.apache.org/" class=" wrap external" target="_blank" rel="nofollow noreferrer">Apache Kylin | Home<i class="icon-external"></i></a><br>这不是某几个个人的业余作品，是一群对技术有追求的人的事业。<br>商业化的运作保证了项目的资金和人员的稳定性，收入主要来自捐赠和技术咨询服务。<br><br>我举这两个例子是想说明，有些事情在起变化。过去二十年我所参与了解的中国技术圈，基本都是应用开发为主，基础技术都是来自国外，大多是美国，普通工程师是面向SDK API编程，高手也就是读懂别人的项目做些局部优化和定制，很少有自己创新的东西，很长时间中国开源届也就靠LVS等项目撑撑面子。<br><br>但是最近几年不一样了，国人主导的开源项目真实如雨后春笋般出现。尤其在一些比较热门前沿的领域，比如前端开发，Vue，Electron等。<br><br>所谓厚积薄发，美国人引领全球IT技术那是他们从二战就开始积累的结果，而那时候中国人还在战乱和饥荒里面挣扎。经过30多年的经济建设，终于产生了那么一批人，他们有足够深厚的技术积累，有丰富的项目经验，有广阔的技术视野，并且有一定的经济基础，可以投入到他们热爱的纯技术领域，可以几年不求短期回报地去打磨技术。<br><br>查下历史可以看到，Hadoop立项是2006年，理论基础来自2003年google的论文，而google能发布这样的理论想必也经历了多年的研究，这是扎实的理论和多年工程积累的结果。<br>中国如果想有类似的项目，10年的积累是必不可少的。<br><br>相信还有很多类似的项目在发展在成长，过去几年国内开源技术领域创新有个小爆发，原因我觉得就是70后到了四十不惑，80后到了三十而立，而部分90后已经吃喝不愁了，改革开放后受教育的几代人成长起来了。而这只是刚刚开始，后面的发展可能会超乎大家的想象，等到90后都四十不惑的时候，中国成为全球技术创新的发源地也不是不可能的。<br><br>如果你年轻，有想法，对技术有追求，可以去参与这样的项目，向前辈大牛学习，开拓视野提升技术能力。PingCap 和 Kylin都在招人，也招实习生。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="52073443-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/35548022/answer/141363015">发布于 2017-01-17</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>34 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+</div>
+
+<div class="more-awesome"><span>更多回答</span></div>
+<div class="awesome-answer-list">
+
+<div class="feed-item">
+<div class="content">
+<div class="entry-body "
+data-aid="26592599"
+data-atoken="77915301"
+data-collapsed="False"
+data-created="1450713134"
+data-isowner="0"
+data-helpful="1"
+data-copyable="1"
+>
+<link itemprop="url" href="/question/35548022/answer/77915301">
+<meta itemprop="answer-id" content="26592599">
+<meta itemprop="answer-url-token" content="77915301">
+
+<div class="zm-item-vote">
+<a class="zm-item-vote-count js-expand js-vote-count" href="javascript:;" data-bind-votecount>820</a>
+</div>
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">820</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+<div class="zm-item-answer-detail">
+<div class="zm-item-answer-author-info">
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$xiong-chen-yan"
+target="_blank" href="/people/xiong-chen-yan"
+>熊辰炎</a><span class="icon icon-badge-best_answerer icon-badge" data-tooltip="s$b$优秀回答者"></span></span><span class="badge-summary"><a href="/people/xiong-chen-yan#hilightbadge" target="_blank">机器学习话题优秀回答者</a></span>
+
+
+
+<span title="PhD在读@CMU, 搜索，知识图谱，机器学习" class="bio">
+PhD在读@CMU, 搜索，知识图…
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="820">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">820</span>&nbsp;人赞同</a></span>
+
+
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6425875" data-action="/answer/content" data-author-name="熊辰炎" data-entry-url="/question/35548022/answer/77915301">
+
+<textarea hidden class="content">现在其实没必要再提这个问题了，分布式过了这么多年，早已经不再是简单的Hadoop的事情了。国内各家大公司和一些专门做这个创业公司都有更好的解决方案。&lt;br&gt;&lt;br&gt;其实如果问的是七八年前中国为什么没有搞出来Hadoop的话，那还是一个很值得思索的问题。&lt;br&gt;&lt;br&gt;Google的Map/Reduce论文发表于2004年。2007年作为其开源版本的Hadoop 初版发布。&lt;br&gt;那时候Hadoop是真的一线技术，它的发布可以说正式揭开了现在（随便去一个澡堂都能听到有人聊的）“大数据”时代的序幕。&lt;br&gt;&lt;br&gt;那时候Baidu非常认真的要自己搞一套分布式系统出来。可能你现在不信，但是那会百度还是非常有技术追求的，还在非常猛的正面刚Google。那时候Hadoop刚开源，只有Java版本，大规模集群和大吞吐量的支持也没有现在这么的好。而且刚release的开源软件拿在线上用就纯粹是折磨oncall工程师。&lt;br&gt;&lt;br&gt;于是07年的时候，Baidu决定自己上，从底层的分布式系统，到顶层的Map/Reduce API，全自己造。什么Java Python，那都不efficient，直接上纯C，C++都不用的。&lt;br&gt;&lt;br&gt;公司的投入非常大，从MSRA挖来了一个非常有名的做分布式的学者带队，从各个技术部门（那会主要是PS和ECOM）抽调了主力技术骨干（都是表现非常好的T5，T6）成立了专门的项目组。当时全百度的开发可能也就两百三百人，这个项目一下就从里面征调了几十个有经验的主力出来，可想而知这个力度有多大。项目组从leader到一线开发都非常有激情，毕竟在做世界领先的开创性的技术，整个项目组狂加班。当时几乎普天12层西侧每天晚上都是亮着的。&lt;br&gt;&lt;br&gt;过了一两年后基本都做出来了，性能跟Hadoop比也差不多，在我看来真心是非常了不起，非常值得敬佩。但是恐怕除了那时候在Baidu的老人，现在已经没几个人还知道Pyramid了。为什么呢？&lt;br&gt;&lt;br&gt;&lt;br&gt;Baidu的另一拨人拿Hadoop的代码来包装了一下，用C重写了API，然后陆续用C重写了一些性能模块，最后在跟Pyramid的竞争中以微弱优势获胜。一方面是性能上的稳定性可能好一些，毕竟重新造轮子需要时间更长。另一方面Hadoop的部门更大，所以用的人更多。最后可能也是最重要的，高层并不觉得自己原创一个跟拿开源的抄一个出来有什么优势，即使两者目前性能差不多，不如用开源的，于是就。。。后来Pyramid那些精英工程师们就基本都走了。&lt;br&gt;&lt;br&gt;所以说其实即使是放在当年刚刚有Hadoop的时候，那套东西也并不是那么的难。国内能做出来的人还是有不少的。后来我在MSRA的组的几个人就拿C++做了一套内部使用的出来。&lt;br&gt;问题其实是，公司有没有对这种没有短期效益，但是长期是一个公司核心竞争力的技术方向的持续投入的决心。&lt;br&gt;在云计算越来越重要的今天，现在回过头看看阿里云，再看看百度云，只能是一声叹息。</textarea>
+
+
+<div class="zh-summary summary clearfix">
+
+现在其实没必要再提这个问题了，分布式过了这么多年，早已经不再是简单的Hadoop的事情了。国内各家大公司和一些专门做这个创业公司都有更好的解决方案。 其实如果问的是七八年前中国为什么没有搞出来Hadoop的话，那还是一个很值得思索的问题。 Google的Map/…
+
+<a href="/question/35548022/answer/77915301" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+<a class="zg-anchor-hidden ac" name="26592599-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2015-12-21" target="_blank" href="/question/35548022/answer/77915301">编辑于 2015-12-22</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>113 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div class="feed-item">
+<div class="content">
+<div class="entry-body "
+data-aid="52019731"
+data-atoken="141228945"
+data-collapsed="False"
+data-created="1484550951"
+data-isowner="0"
+data-helpful="1"
+data-copyable="1"
+>
+<link itemprop="url" href="/question/35548022/answer/141228945">
+<meta itemprop="answer-id" content="52019731">
+<meta itemprop="answer-url-token" content="141228945">
+
+<div class="zm-item-vote">
+<a class="zm-item-vote-count js-expand js-vote-count" href="javascript:;" data-bind-votecount>315</a>
+</div>
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">315</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+<div class="zm-item-answer-detail">
+<div class="zm-item-answer-author-info">
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$li-mu-23"
+target="_blank" href="/people/li-mu-23"
+>李沐</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="315">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">315</span>&nbsp;人赞同</a></span>
+
+
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="6425875" data-action="/answer/content" data-author-name="李沐" data-entry-url="/question/35548022/answer/141228945">
+
+<textarea hidden class="content">一句话总结是：那个年代中国高校和公司确实搞不出hadoop/spark. 现在估计问题不大，但已经没必要了，因为目前大家关注别的东西，例如AI。&lt;br&gt;&lt;br&gt;&lt;b&gt;先说下历史。&lt;/b&gt;&lt;br&gt;&lt;br&gt;04年MapReduce（MR）论文横空出世，那时候MR已经在G内部用了一段时间。论文的内容基本上是：瞧，我做了忒nb的东西，说几点让你们瞻仰下。学术界和工业界一片哗然，太big data了，只能点赞。&lt;br&gt;&lt;br&gt;随后MR团队的人出走yahoo，用java重写了一个叫hadoop的东西。虽然一开始不那么好用，但大家也没别的选择。所以各个公司纷纷跳坑，10年前后每个公司都乐此不疲的讲我们有多大多大的hadoop集群，每天处理多少PB的数据。&lt;br&gt;&lt;br&gt;10年spark论文出来。之前matei已经折腾了好一阵子（既在UCB也在facebook（还是twitter？）），论文之前也被拒了好几次，理由是“不就是in-memory hadoop？贡献不大啊”&lt;br&gt;&lt;br&gt;但接下来amplab做了个很明智的决定，雇佣全职码农提升spark代码质量，大量的开meetup来培训用户，目标很明确，就是要挖走现有hadoop用户。&lt;br&gt;&lt;br&gt;所以spark在大数据最火的那几年迅速积攒了大量用户。&lt;br&gt;&lt;br&gt;&lt;b&gt;技术上为什么国内那个年代不行&lt;/b&gt;&lt;br&gt;&lt;br&gt;04年到10年，整个国内系统方向实力是比较差的。例如OSDI/SOSP上论文基本靠MSRA撑着，但MSRA那种用大量实习生来堆工作量的做法明显不适合其他公司和高校。&lt;br&gt;&lt;br&gt;一个系统最难的是在设计上。这个完全不是科学，纯粹是艺术和哲学。好的架构和接口设计是成功的一半，但那个年代学术界系统方向不兴旺，间接的导致了公司对通用系统架构不热衷。&lt;br&gt;&lt;br&gt;我在国内公司（百度，msra）和美国公司（G，amazon）都呆过，整体而言不觉得国内程序员比美国弱，但架构师这种需要长时间的培养的关键人物国内还是缺的。&lt;br&gt;&lt;br&gt;后期度厂朝着向G学习的风气，开始大量投人造轮子。那段时间我刚好在度厂的商务搜索部门，也围观了一些事情。我感觉不是技术上有问题，而是非技术上的原因。&lt;br&gt;&lt;br&gt;&lt;b&gt;非技术上原因&lt;br&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;非技术上最重要的是生态圈，包括活跃的开发者，大量的用户，文档，有问题可以通过网络获得及时帮助。&lt;br&gt;&lt;br&gt;试想你是一个用户，你花一个小时写个map写个reduce然后提交，虽然处理几十TB的数据需要好几个小时，但鲜有出错，出错了搜下error估计可以得到个答案。但这个时候有个人说，来用下我们新开发的系统，至少比hadoop快三倍，但你需要帮我们踩踩坑，有问题告诉我们，我们尽量解决。所以一是让机器跑10个小时，二是让你自己折腾10个小时，那么明显绝大部分人会选一。&lt;br&gt;&lt;br&gt;所以当年即使百度造的轮子更块更好，但公司内部就那么两大用户（搜索和广告）和几十个小用户，那么获得前期尝鲜用户的困难度是很大的。而且那个时间公司不断的买新机器，换更快的，所以即使现在不能跑的大任务，等几天就好了。&lt;br&gt;&lt;br&gt;生态圈的建设不是一天两天的事情，通常需要好几年的持续投入。首先国内高校很难做这个事情，需要大量人力和资金。而公司相对来说产品更加优先，那个时期，国内公司基本都是试图在产品上超越美国公司，但并不重视系统架构。&lt;br&gt;&lt;br&gt;再软软的举个mxnet的例子。mx虽然看上去项目就是开发不到两年，但好几年前就开始了相关项目，例如cxxnet和minerva，的开发。用户也是慢慢的积累起来，听大家的反馈，利用有限的人力做呼声最好的特性。在这一点上，需要的是时间和耐心。&lt;br&gt;&lt;br&gt;&lt;b&gt;现在国内有能力做一流的系统&lt;/b&gt;&lt;br&gt;&lt;br&gt;国内这几年技术发展挺迅猛。例如mxnet的用户群大部分是来自国内。我个人感觉国内用户更愿意尝试新东西，做事情也更加迅速。虽然说mxnet很多开发者人都不在国内，不过我觉得美国提供的东西更多是自由的时间可以做自己想做的事情，而不是这边有多少大牛可以请教有多少技术可以直接用。&lt;br&gt;&lt;br&gt;同时大家也看到了生态圈的红利，例如hadoop和android，所以很多公司都大力支持做自己的平台。虽然不是那么普遍，但我接触也有好几家年轻公司有这个计划了。&lt;br&gt;&lt;br&gt;当正如楼上所说的，hadoop/spark已经在那里了，重新招个轮子成功的概率太少，所以大家应该把目光放在别的地方。&lt;br&gt;&lt;br&gt;但反过来说，国内做生态圈的一个劣势是在语言上。例如我们已经看见用中文提issue，虽然我们是能看中文，但英文还是通用语言，用中文导致其他人觉得这个生态区太封闭。也有用非常不礼貌的英文，通常是中文的直译，用中文说没问题，但读英语觉得特别别扭。&lt;br&gt;&lt;br&gt;我也听到传言说美国几大主流开源社区对接受纯由在中国的开发者开发的软件还是有偏见，文化和沟通是主要的原因。&lt;br&gt;&lt;br&gt;目前我们也正在让mxnet加入apache software foundation，去体验下主流开源社区的开发，过一阵子可以分享我们经验。&lt;br&gt;&lt;br&gt;PS. 看见大家都在说我们有XXX比hadoop快。其实对于开源软件来说，性能重要，倒不是最关键，我认为设计理念，用户多少，影响面更重要。类似Hadoop/spark的轮子各大公司也是一把一把，哪个不比他们快个好几倍？但是不开源的话其实也没得什么比，即使开源了没健康社区也是很难活长久。</textarea>
+
+
+<div class="zh-summary summary clearfix">
+
+一句话总结是：那个年代中国高校和公司确实搞不出hadoop/spark. 现在估计问题不大，但已经没必要了，因为目前大家关注别的东西，例如AI。 <b>先说下历史。</b> 04年MapReduce（MR）论文横空出世，那时候MR已经在G内部用了一段时间。论文的内容基本上是：瞧，我做了…
+
+<a href="/question/35548022/answer/141228945" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+
+</div>
+</div>
+</div>
+</div>
+<a class="zg-anchor-hidden ac" name="52019731-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2017-01-16" target="_blank" href="/question/35548022/answer/141228945">编辑于 2017-01-16</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>9 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div class="zh-answers-title">
+<h3><a href="/question/35548022" class="zg-link-litblue">查看全部 104 个回答</a></h3>
+</div>
+<div class="zu-answer-form-disabled-wrap" id="zh-single-answer-disable-wrap" style="display:none"></div>
+
+</div>
+</div>
+
+
+<div class="zu-main-sidebar" data-za-module="RightSideBar">
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div class="SignFlow SignFlow--bordered" id="SidebarSignFlow">
+<div class="SignFlow-panel">
+<div class="title register">
+<h1>加入知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view register SignupForm" data-za-module="SignUpForm">
+<form action="/register/email" method="POST">
+<div class="input-wrapper">
+<input type="text" name="fullname" aria-label="姓名" data-placeholder="姓名" required>
+</div>
+<div class="input-wrapper">
+
+<input type="text" name="phone_num" class="account" aria-label="手机号（仅支持中国大陆）" data-placeholder="手机号（仅支持中国大陆）" required>
+
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" hidden> 
+<input type="password" name="password" aria-label="密码" data-placeholder="密码（不少于 6 位）" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="注册" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<span>已有帐号？<a href="#" class="switch-to-login">登录</a></span>
+</div>
+</form>
+</div>
+</div>
+<div class="SignFlow-panel" hidden>
+<div class="LoginForm">
+<div class="title login">
+<h1>登录知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view login" data-za-module="SignInForm">
+<form method="POST">
+<div class="input-wrapper">
+<input type="text" name="account" class="account" aria-label="手机号或邮箱" placeholder="手机号或邮箱" required>
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" name="password" aria-label="密码" placeholder="密码" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="登录" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<label class="remember-me"><input type="checkbox" name="remember_me" checked value="true">记住我</label>
+<span class="middot">·</span>
+<button class="unable-login" type="button">无法登录？</button>
+<button type="button" class="js-show-sns-buttons is-visible">社交帐号登录</button>
+<div class="sns-buttons">
+<button type="button" class="wechat"><span class="ico sprite-global-icon-wechat-gray"></span>微信</button>
+<button type="button" class="weibo"><span class="ico sprite-global-icon-weibo-gray"></span>微博</button>
+<button type="button" class="qq"><span class="ico sprite-global-icon-qq-gray"></span>QQ</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-side-section">
+<div class="DownloadApp">
+<button class="DownloadApp-button">
+<span class="sprite-global-icon-qrcode"></span>
+下载知乎 App
+</button>
+</div>
+</div>
+
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner zg-gray-normal" id="zh-question-side-header-wrap">
+<button data-follow="q:m:button" class="follow-button zg-follow zg-btn-green" data-id="6425875">关注问题</button>
+
+2083
+人关注该问题
+
+</div>
+</div>
+
+<div class="zm-side-section sidebar-author-info clearfix">
+<div class="zm-side-section-inner" id="js-sidebar-author-info">
+<h3>关于作者</h3>
+<div class="zm-profile-card zm-profile-section-item zg-clear no-hovercard">
+<div class="zg-right">
+<button data-follow="m:button" data-id="71637fe077b9a2d7be320e2800ccd818" class="zg-btn zg-btn-follow zm-rich-follow-btn small nth-0">关注他</button>
+</div>
+<a title="姚冬"
+data-hovercard="p$t$yao-dong-27"
+class="zm-item-link-avatar"
+href="/people/yao-dong-27">
+<img src="https://pic3.zhimg.com/45e5c4b16_m.jpg" class="zm-item-img-avatar">
+</a>
+<div class="zm-list-content-medium">
+<h2 class="zm-list-content-title"><span class="author-link-line">
+<a data-hovercard="p$t$yao-dong-27" href="https://www.zhihu.com/people/yao-dong-27" class="zg-link author-link" title="姚冬"
+>姚冬</a><span class="icon icon-badge-best_answerer icon-badge" data-tooltip="s$b$优秀回答者"></span></span></h2>
+
+<div class="summary-wrapper summary-wrapper--medium">
+<span class="badge-summary"><a href="/people/yao-dong-27#hilightbadge" target="_blank">程序员、编程、C++话题优秀回答者</a></span>
+<span class="bio">填坑侠</span>
+</div>
+<div class="details zg-gray">
+<a target="_blank" href="/people/yao-dong-27/followers" class="zg-link-gray-normal">61378 关注者</a>
+/
+<a target="_blank" href="/people/yao-dong-27/asks" class="zg-link-gray-normal">0 提问</a>
+/
+<a target="_blank" href="/people/yao-dong-27/answers" class="zg-link-gray-normal">619 回答</a>
+/
+<a target="_blank" href="/people/yao-dong-27" class="zg-link-gray-normal">186106 赞同</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+<div class="shameimaru-placeholder" data-loc="answer_up" data-params='{&quot;question_token&quot;: 35548022}'></div>
+
+<div id="react-warrant-sidelist" data-token="141363015"></div>
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<h3>被收藏 <a href="/question/35548022/answer/141363015/collections" data-za-c="collect" data-za-a="click_answer_collected_count" data-za-l="sidebar_answer_collected_count">163</a> 次</h3>
+<div id="zh-fav-list-side-related">
+
+<div class="zm-item" id="mi-1433867411">
+<h2 class="zm-item-title ">
+<a href="/collection/62344587">（伪）颈椎病康复指南</a>
+</h2>
+<div class="zm-item-meta">
+
+<a href="/people/myd7349" data-hovercard="p$t$myd7349" class="zg-link-litblue"> myd7349 </a> 创建
+
+
+<span style="color: #dddddd;">&nbsp;|&nbsp;</span>
+<a class="zg-link-gray" href="/collection/62344587/followers" data-za-c="collect" data-za-a="visit_answer_collections" data-za-l="sidebar_answer_collection_followed_count">2585 人关注</a>
+
+</div>
+</div>
+
+<div class="zm-item" id="mi-1413470730">
+<h2 class="zm-item-title ">
+<a href="/collection/40424826">百科</a>
+</h2>
+<div class="zm-item-meta">
+
+<a href="/people/yue-guo-shuai-68" data-hovercard="p$t$yue-guo-shuai-68" class="zg-link-litblue"> ylck </a> 创建
+
+
+<span style="color: #dddddd;">&nbsp;|&nbsp;</span>
+<a class="zg-link-gray" href="/collection/40424826/followers" data-za-c="collect" data-za-a="visit_answer_collections" data-za-l="sidebar_answer_collection_followed_count">8 人关注</a>
+
+</div>
+</div>
+
+<div class="zm-item" id="mi-1431225954">
+<h2 class="zm-item-title ">
+<a href="/collection/58386561">Paper</a>
+</h2>
+<div class="zm-item-meta">
+
+<a href="/people/jn-shen-61" data-hovercard="p$t$jn-shen-61" class="zg-link-litblue"> jn shen </a> 创建
+
+
+<span style="color: #dddddd;">&nbsp;|&nbsp;</span>
+<a class="zg-link-gray" href="/collection/58386561/followers" data-za-c="collect" data-za-a="visit_answer_collections" data-za-l="sidebar_answer_collection_followed_count">6 人关注</a>
+
+</div>
+</div>
+
+<div class="zm-item" id="mi-1377106434">
+<h2 class="zm-item-title ">
+<a href="/collection/22537422">技术</a>
+</h2>
+<div class="zm-item-meta">
+
+<a href="/people/vitonzhang" data-hovercard="p$t$vitonzhang" class="zg-link-litblue"> 张崇 </a> 创建
+
+
+<span style="color: #dddddd;">&nbsp;|&nbsp;</span>
+<a class="zg-link-gray" href="/collection/22537422/followers" data-za-c="collect" data-za-a="visit_answer_collections" data-za-l="sidebar_answer_collection_followed_count">4 人关注</a>
+
+</div>
+</div>
+
+<div class="zm-item" id="mi-1431224526">
+<h2 class="zm-item-title ">
+<a href="/collection/58384855">好货知识</a>
+</h2>
+<div class="zm-item-meta">
+
+<a href="/people/qu-da-ye-12" data-hovercard="p$t$qu-da-ye-12" class="zg-link-litblue"> 马男瞿大爷 </a> 创建
+
+
+<span style="color: #dddddd;">&nbsp;|&nbsp;</span>
+<a class="zg-link-gray" href="/collection/58384855/followers" data-za-c="collect" data-za-a="visit_answer_collections" data-za-l="sidebar_answer_collection_followed_count">4 人关注</a>
+
+</div>
+</div>
+
+</div>
+</div>
+</div>
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div id="zh-question-related-questions" class="zh-question-related-questions clearfix" data-za-module="RelatedQuestions">
+
+<a class="zg-right next">换一换</a>
+
+<h3>相关问题</h3>
+<ul itemprop="relatedQuestion" itemscope itemtype="http://schema.org/ItemList">
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/19850365" data-id="120029" data-za-element-name="Title">
+除了 Hadoop 还有哪些分布式计算平台？优势各自是什么？
+</a> <span class="num">6 个回答</span><meta itemprop="followerCount" content="296" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/29265587" data-id="3889146" data-za-element-name="Title">
+如何快速成为数据分析师？
+</a> <span class="num">130 个回答</span><meta itemprop="followerCount" content="33899" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21294792" data-id="698605" data-za-element-name="Title">
+有了分布式计算平台后，像天河这种超级计算机还有存在的必要吗？
+</a> <span class="num">22 个回答</span><meta itemprop="followerCount" content="393" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/22750704" data-id="1281013" data-za-element-name="Title">
+如何迅速成长成为一名数据分析师？
+</a> <span class="num">28 个回答</span><meta itemprop="followerCount" content="4760" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21116669" data-id="627338" data-za-element-name="Title">
+如何将手中 20 多台旧电脑，组建一台超级计算机？
+</a> <span class="num">156 个回答</span><meta itemprop="followerCount" content="2618" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/23079001" data-id="1412543" data-za-element-name="Title">
+内存有限的情况下 Spark 如何处理 T 级别的数据？
+</a> <span class="num">6 个回答</span><meta itemprop="followerCount" content="410" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/22786302" data-id="1295264" data-za-element-name="Title">
+为什么很多公司的大数据相关业务都基于 Hadoop 方案？
+</a> <span class="num">54 个回答</span><meta itemprop="followerCount" content="1320" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/26612333" data-id="2827873" data-za-element-name="Title">
+银行海量交易数据是怎么存储的？海量流水数据如何开放给客户查甚至导出？
+</a> <span class="num">16 个回答</span><meta itemprop="followerCount" content="363" />
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+<div class="zm-side-section" data-za-module="RelatedLives">
+<div class="SidebarListNav SidebarListNav--noFollowLink zm-side-section-inner">
+<h3>相关 Live 推荐 ⚡️</h3>
+<ul class="SidebarListNav-list">
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/799648645778673664" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic3.zhimg.com/v2-39dd6b6388f2c35f1438d156084f6ace_s.jpg" srcset="https://pic3.zhimg.com/v2-39dd6b6388f2c35f1438d156084f6ace_xs.jpg 2x" alt="数据库 GreenPlum 入门" />
+<span class="SidebarListNav-label">
+数据库 GreenPlum 入门
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/812019068583440384" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic3.zhimg.com/v2-15907fd717e9975427bc1ef810dc3d2a_s.jpg" srcset="https://pic3.zhimg.com/v2-15907fd717e9975427bc1ef810dc3d2a_xs.jpg 2x" alt="实用统计分析与 R 入门（一）" />
+<span class="SidebarListNav-label">
+实用统计分析与 R 入门（一）
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/813022786439225344" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic2.zhimg.com/57a7f66198db0f0220603237c1713395_s.jpg" srcset="https://pic2.zhimg.com/57a7f66198db0f0220603237c1713395_xs.jpg 2x" alt="高端数据科学家养成" />
+<span class="SidebarListNav-label">
+高端数据科学家养成
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/794231822723723264" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic4.zhimg.com/v2-4739d5712fcb1d08e919183e7b007013_s.jpg" srcset="https://pic4.zhimg.com/v2-4739d5712fcb1d08e919183e7b007013_xs.jpg 2x" alt="如何通过数据分析提升互联网流量的价值？" />
+<span class="SidebarListNav-label">
+如何通过数据分析提升互联网流量的价值？
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/792757899586846720" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic3.zhimg.com/616af5cfa_s.jpg" srcset="https://pic3.zhimg.com/616af5cfa_xs.jpg 2x" alt="「能源大数据」如何玩转光伏大数据" />
+<span class="SidebarListNav-label">
+「能源大数据」如何玩转光伏大数据
+</span>
+</a>
+</li>
+
+</ul>
+</div>
+</div>
+
+<div class="zm-side-section zh-answer-status">
+<div class="zm-side-section-inner">
+<h3>回答状态</h3>
+<p>
+
+发布于
+
+<span class="time">2017-01-17</span>
+</p>
+<p>
+所属问题被浏览 <strong>256829</strong> 次
+</p>
+</div>
+</div>
+<div class="shameimaru-placeholder" data-loc="answer_down" data-params='{&quot;question_token&quot;: 35548022}'></div>
+
+</div>
+
+
+</div>
+
+
+<div id="zh-footer" class="zh-footer">
+<div class="content zg-wrap clearfix">
+<ul>
+
+<li><a href="https://liukanshan.zhihu.com" target="_blank">刘看山</a></li>
+
+<li><a href="/app" target="_blank">移动应用</a></li>
+<li><a href="/careers">加入知乎</a></li>
+<li><a href="/terms" target="_blank">知乎协议</a></li>
+<li><a href="/jubao" target="_blank">举报投诉</a></li>
+<li><a href="/contact">联系我们</a></li>
+
+</ul>
+
+<span class="copy">&copy; 2017 知乎</span>
+
+</div>
+</div>
+
+<script type="text/json" class="json-inline" data-name="guiders2">{}</script>
+<script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
+<script type="text/json" class="json-inline" data-name="user_status">[null,null,false]</script>
+<script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
+<script type="text/json" class="json-inline" data-name="permissions">[]</script>
+
+
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1487314593000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+
+<script type="text/json" class="json-inline" data-name="ra-urls">{"Copyright":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Copyright.98ac6609.js","PayUIApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PayUIApp.ca78ba78.js","CouponApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CouponApp.66b486a6.js","PaymentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PaymentApp.7f16d61c.js","Community":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Community.a79a5745.js","Report":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Report.26635627.js","OrgOpHelp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/OrgOpHelp.f8c794ed.js","common":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/common.a4dd3236.js","BalanceApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/BalanceApp.14e3a013.js","AnswerWarrant":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/AnswerWarrant.97f134aa.js","CommentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CommentApp.7556991d.js"}</script>
+
+<script type="text/json" class="json-inline" data-name="current_question">{"status":"normal","isLocked":0,"isEditLocked":false,"detailEditReasonRequired":true,"editPermission":false,"isAnon":0,"qid":6425875,"urlToken":35548022,"isOrg":false,"askAboutMember":0}</script>
+<script type="text/json" class="json-inline" data-name="current_question_bio">{"selected_bio":null,"type":null,"value":""}</script>
+<script type="text/json" class="json-inline" data-name="current_answer">{"urlToken":141363015}</script>
+<script type="text/json" class="json-inline" data-name="draft">[]</script>
+
+<script src="https://static.zhihu.com/static/revved/-/js/vendor.cb14a042.js"></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/base.84f61660.js"></script>
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/common.9ec832a9.js"></script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/richtexteditor.ba48c7a1.js" async></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/page-main.30e64749.js"></script>
+<meta name="entry" content="ZH.entrySA" data-module-id="page-main">
+
+<script type="text/zscript" znonce="f1a313a3185245e0ade3a14690c554f7"></script>
+
+<input type="hidden" name="_xsrf" value="0a7fffcb3b4a83d64e9c5369be7e0b87"/>
+</body>
+</html>

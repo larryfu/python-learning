@@ -1,0 +1,1605 @@
+<!DOCTYPE html>
+<html lang="zh-CN" dropEffect="none" class="no-js no-auth ">
+<head>
+<meta charset="utf-8" />
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="renderer" content="webkit" />
+<meta http-equiv="X-ZA-Response-Id" content="00180f8e226706d3">
+<meta http-equiv="X-ZA-Experiment" content="default:None">
+
+<title>
+
+
+怎样直观地解释涨落耗散定理？ - 物理学 - 知乎
+
+
+</title>
+
+<meta name="apple-itunes-app" content="app-id=432274380, app-argument=zhihu://questions/23226531">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta http-equiv="mobile-agent" content="format=html5;url=https://www.zhihu.com/question/23226531">
+<meta id="znonce" name="znonce" content="05d83663455f499caacdac896f39f555">
+
+
+
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-152.87c020b9.png" sizes="152x152">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-120.496c913b.png" sizes="120x120">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-76.dcf79352.png" sizes="76x76">
+<link rel="apple-touch-icon" href="https://static.zhihu.com/static/revved/img/ios/touch-icon-60.9911cffb.png" sizes="60x60">
+
+
+<link rel="shortcut icon" href="https://static.zhihu.com/static/favicon.ico" type="image/x-icon">
+
+<link rel="search" type="application/opensearchdescription+xml" href="https://static.zhihu.com/static/search.xml" title="知乎" />
+<link rel="stylesheet" href="https://static.zhihu.com/static/revved/-/css/z.755d7b1e.css">
+
+
+
+<meta name="google-site-verification" content="FTeR0c8arOPKh8c5DYh_9uu98_zJbaWw53J-Sch9MTg" />
+
+
+
+<!--[if lt IE 9]>
+<script src="https://static.zhihu.com/static/components/respond/dest/respond.min.js"></script>
+<link href="https://static.zhihu.com/static/components/respond/cross-domain/respond-proxy.html" id="respond-proxy" rel="respond-proxy" />
+<link href="/static/components/respond/cross-domain/respond.proxy.gif" id="respond-redirect" rel="respond-redirect" />
+<script src="/static/components/respond/cross-domain/respond.proxy.js"></script>
+<![endif]-->
+<script src="https://static.zhihu.com/static/revved/-/js/instant.14757a4a.js"></script>
+
+
+
+
+</head>
+
+<body class="zhi ">
+
+
+
+
+<div role="navigation" class="zu-top" data-za-module="TopNavBar">
+<div class="zg-wrap modal-shifting clearfix" id="zh-top-inner">
+<a href="/" class="zu-top-link-logo" id="zh-top-link-logo" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_zhihu_logo">知乎</a>
+
+
+
+<ul class="topnav-noauth clearfix">
+<li>
+<a href="javascript:;" class="js-signup-noauth"><i class="zg-icon zg-icon-dd-home"></i>注册知乎</a>
+</li>
+<li>
+<a href="javascript:;" class="js-signin-noauth">登录</a>
+</li>
+</ul>
+
+
+
+<button class="zu-top-add-question" id="zu-top-add-question">提问</button>
+
+
+<div role="search" id="zh-top-search" class="zu-top-search">
+<form method="GET" action="/search" id="zh-top-search-form" class="zu-top-search-form">
+
+
+
+<input type="hidden" name="type" value="content">
+<label for="q" class="hide-text">知乎搜索</label><input type="text" class="zu-top-search-input" id="q" name="q" autocomplete="off" value="" maxlength="100" placeholder="搜索你感兴趣的内容...">
+<button type="submit" class="zu-top-search-button"><span class="hide-text">搜索</span><span class="sprite-global-icon-magnifier-dark"></span></button>
+</form>
+</div>
+
+
+
+<div id="zg-top-nav" class="zu-top-nav">
+<ul class="zu-top-nav-ul zg-clear">
+
+<li class="zu-top-nav-li " id="zh-top-nav-home">
+<a class="zu-top-nav-link" href="/" id="zh-top-link-home" data-za-c="view_home" data-za-a="visit_home" data-za-l="top_navigation_home">首页</a>
+</li>
+
+
+
+<li class="top-nav-topic-selector zu-top-nav-li " id="zh-top-nav-topic">
+<a class="zu-top-nav-link" href="/topic" id="top-nav-dd-topic">话题</a>
+</li>
+
+<li class="zu-top-nav-li " id="zh-top-nav-explore">
+<a class="zu-top-nav-link" href="/explore">发现</a>
+</li>
+
+
+</ul>
+<div class="zu-top-nav-live zu-noti7-popup zg-r5px no-hovercard" id="zh-top-nav-live-new" role="popup" tabindex="0">
+<div class="zu-top-nav-live-inner zg-r5px">
+<div class="zu-top-live-icon">&nbsp;</div>
+<div class="zu-home-noti-inner" id="zh-top-nav-live-new-inner">
+<div class="zm-noti7-popup-tab-container clearfix" tabindex="0">
+<button class="zm-noti7-popup-tab-item message">
+<span class="icon">消息</span>
+</button>
+<button class="zm-noti7-popup-tab-item user">
+<span class="icon">用户</span>
+</button>
+<button class="zm-noti7-popup-tab-item thanks">
+<span class="icon">赞同和感谢</span>
+</button>
+</div>
+</div>
+<div class="zm-noti7-frame-border top"></div>
+<div class="zm-noti7-frame">
+<div class="zm-noti7-content message">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content user" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-content thanks" style="display:none;">
+<div class="zm-noti7-content-inner">
+<div class="zm-noti7-content-body">
+<div class="zm-noti7-popup-loading">
+<span class="noti-spinner-loading"></span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-noti7-frame-border bottom"></div>
+<div class="zm-noti7-popup-footer">
+<a href="/notifications" class="zm-noti7-popup-footer-all zg-right">查看全部 &raquo;</a>
+<a href="/settings/notification" class="zm-noti7-popup-footer-set" title="通知设置" ><i class="zg-icon zg-icon-settings"></i></a>
+</div>
+</div>
+</div>
+
+</div>
+
+</div>
+</div>
+
+
+<div class="zu-global-notify" id="zh-global-message" style="display:none">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<a class="zu-global-notify-close" href="javascript:;" title="关闭" name="close">x</a>
+<span class="zu-global-notify-icon"></span>
+<span class="zu-global-notify-msg"></span>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-redirect-info" style="display:none"></div>
+
+
+<div class="zu-global-notify zu-global-notify-info" id="zh-question-notification-summary" style="display:none;">
+<div class="zg-wrap">
+<div class="zu-global-nitify-inner">
+<span class="zu-global-notify-icon"></span>
+<ul class="zu-question-notify-wrap">
+</ul>
+</div>
+</div>
+</div>
+
+
+<div class="zg-wrap zu-main clearfix with-indention-votebar" itemscope itemtype="http://schema.org/Question" id="zh-single-question-page" data-urltoken="23226531" role="main">
+<div class="zu-main-content">
+<div class="zu-main-content-inner">
+
+
+<meta itemprop="isTopQuestion" content="false" />
+<meta itemprop="visitsCount" content="16335" />
+
+
+<div class="zm-tag-editor zg-section">
+<div class="zm-tag-editor-labels zg-clear">
+
+<a class="zm-item-tag"
+href="/topic/19556950"
+data-hovercard="t$b$19556950" data-token="19556950" data-topicid="2253" data-za-element-name="Title">
+物理学
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19608194"
+data-hovercard="t$b$19608194" data-token="19608194" data-topicid="19387" data-za-element-name="Title">
+统计物理
+</a>
+
+<a class="zm-item-tag"
+href="/topic/19658521"
+data-hovercard="t$b$19658521" data-token="19658521" data-topicid="36191" data-za-element-name="Title">
+凝聚态物理
+</a>
+
+</div>
+</div>
+<div id="zh-question-title" data-editable="false">
+<h2 class="zm-item-title">
+
+<span class="zm-editable-content">怎样直观地解释涨落耗散定理？</span>
+
+</h2>
+</div>
+<div id="zh-question-detail" class="zm-item-rich-text" data-resourceid="1471880" data-action="/question/detail">
+
+<div class="zm-editable-content">主要想知道的是，为什么涨落耗散定理（fluctuation dissipation theorem，FDT）可以这么普遍地适用，另一个就是一些更直观的感受，特别是怎样的系统会违反涨落耗散定理。</div>
+
+
+</div>
+<div class="zm-item-meta zm-item-comment-el clearfix" id="zh-question-meta-wrap">
+<div class="zm-meta-panel">
+
+<a href="#" name="addcomment" class="toggle-comment meta-item">
+<i class="z-icon-comment"></i>7 条评论
+</a>
+<a href="#" name="share" class="share meta-item">
+<i class="z-icon-share"></i>分享
+</a>
+
+</div>
+<div class="panel-container">
+
+</div>
+</div>
+
+
+<div class="zh-answers-title clearfix">
+
+<div id="zh-answers-filter" class="Sorter">
+
+<span class="lbl">默认排序</span>
+<a class="lbl" href="/question/23226531?sort=created">按时间排序</a>
+
+<i class="zg-icon zg-icon-double-arrow"></i>
+</div>
+
+<h3 data-num="8" id="zh-question-answer-num">8 个回答</h3>
+</div>
+
+<div id="zh-question-answer-wrap" data-pagesize="10" class="zh-question-answer-wrapper" data-widget="navigable" data-navigable-options="{&quot;items&quot;: &quot;&gt;.zm-item-answer&quot;}" data-init="{&quot;params&quot;: {&quot;url_token&quot;: 23226531, &quot;pagesize&quot;: 10, &quot;offset&quot;: 0}, &quot;nodename&quot;: &quot;QuestionAnswerListV2&quot;}">
+
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemprop="topAnswer"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="4854684"
+data-atoken="24040604"
+data-collapsed="0"
+data-created="1396430754"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/24040604">
+<meta itemprop="answer-id" content="4854684">
+<meta itemprop="answer-url-token" content="24040604">
+<a class="zg-anchor-hidden" name="answer-4854684"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">137</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/cheng-song-25" target="_blank" data-hovercard="p$t$cheng-song-25"
+
+><img src="https://pic2.zhimg.com/bdca8c03d_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$cheng-song-25"
+target="_blank" href="/people/cheng-song-25"
+>sym cheng</a><span class="icon icon-badge-id-an icon-badge" data-tooltip="s$b$优秀回答者 · 已认证的个人"></span></span><span class="badge-summary"><a href="/people/cheng-song-25#hilightbadge" target="_blank">物理学话题优秀回答者</a></span>
+
+
+
+<span title="在物质世界的角落" class="bio">
+在物质世…
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="137">
+
+
+<span class="answer-tag">
+<span class="text">收录于 </span>
+
+
+<span class="text">编辑推荐</span>
+
+
+
+</span>
+
+
+<span class="zg-bull text">•</span><span class="voters text"><a href="#" class="more text"><span class="js-voteCount">137</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="sym cheng" data-entry-url="/question/23226531/answer/24040604">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+好问题！ 我始终认为物理不像数学，她公式背后直观的物理图像同样是非常重要的东西。 数学证明没什么好讲的，断掉网打开书拿起笔自己算，我直接进入直观解释的部分。 涨落耗散定理，最重要的结论是：<b>耗散力越强的体系，涨落力越强。</b> 第一次各种积分积出这个…
+
+<a href="/question/23226531/answer/24040604" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+好问题！<br><br>我始终认为物理不像数学，她公式背后直观的物理图像同样是非常重要的东西。<br><br>数学证明没什么好讲的，断掉网打开书拿起笔自己算，我直接进入直观解释的部分。<br><br>涨落耗散定理，最重要的结论是：<b>耗散力越强的体系，涨落力越强。</b><br><br><br>第一次各种积分积出这个结果的时候觉得很没头没脑。不过后来找到一个图像后就觉得很显然了。<br><br><br>我们来看什么叫耗散力？什么叫涨落力？<br><br><br>假如你坐在一个粒子上看其它粒子，你看到它们从各种方向以各种速度不断的撞向你。这里撞一下，那里撞一下。<br>那么这样没头没脑的乱撞，总的效果会抵消么？<br>不一定，因为你屁股下的粒子其实是在动的嘛，你想象你坐在车里面，撞在前面的雨滴是不是要比撞在后面的雨滴要多一些？<br>所以其他粒子没头没脑乱撞的总效果是提供了一个跟你的运动方向相反的力，这就叫耗散力。<br><br>好吧，现在我让屁股下面的粒子老实呆着，总效果会抵消么？<br>恩，如果时间足够长，那就可以抵消。<br>反过来就是说如果时间不足够长，总共也没几个粒子来得及撞你，效果来不及刚好抵消，屁股下面的粒子会随机的动来动去的。就好像被一个随机的力拉着一样，这叫涨落力。<br><br>所以从这个图像你应该看到：<b>涨落和耗散本质上起源于同一个东西，它们其实是同一个的东西的两个不同方面。 这个东西叫做相互作用。</b><br><br>粒子和其他粒子的相互作用，和这个粒子的具体状态有关的不可抵消的部分构成耗散力，浮力，重力这类有具体指向的力。和这个粒子的状态无关的随机部分构成涨落力。<br><br>粒子和粒子之间没有相互作用的理想气体，它们不交换能量和动量。显然这样的系统既不会有涨落也不会有耗散。<br><br>又想象粒子和粒子之间相互作用逐渐增强，单位时间能量和动量交换得越来越快，涨落显然要跟着变大。而如果一个粒子有一个显著的和其他粒子都不太一样的取向，比如在某个特定方向有一个显著的速度。由于单位时间能量和动量交换得越来越快，这个显著性显然要越来越快的消失掉。这就是说耗散也变大了。<br><br>所以涨落耗散定理的根在于相互作用。<br>相互作用是多么普适的东西。<br><br>我想不出反例，希望看到有人补充。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="4854684-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/23226531/answer/24040604">发布于 2014-04-02</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>10 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="27147825"
+data-atoken="79301478"
+data-collapsed="0"
+data-created="1451482813"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/79301478">
+<meta itemprop="answer-id" content="27147825">
+<meta itemprop="answer-url-token" content="79301478">
+<a class="zg-anchor-hidden" name="answer-27147825"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">10</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/shen-shi-70" target="_blank" data-hovercard="p$t$shen-shi-70"
+
+><img src="https://pic3.zhimg.com/caf02bcdb5781b326674aafa4d3f6fe6_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$shen-shi-70"
+target="_blank" href="/people/shen-shi-70"
+>安宇森</a><span class="icon icon-badge-best_answerer icon-badge" data-tooltip="s$b$优秀回答者"></span></span><span class="badge-summary"><a href="/people/shen-shi-70#hilightbadge" target="_blank">物理学、理论物理、量子物理话题优秀回答者</a></span>
+
+
+
+<span title="Physics lover 不是民科！" class="bio">
+Physics…
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="10">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">10</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="安宇森" data-entry-url="/question/23226531/answer/79301478">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+前面的回答都是非平衡统计力学的内容。不过最简单的平衡态中也会出现对于涨落耗散定理的理解具有启发的例子。 从正则系综的配分函数开始：Z=\Sigma _{n}e^{-\beta E_n} 系统的能量的平均值为：\langle E \rangle=\Sigma_n E_{n}P_{n}=\Sigma_n \frac{E_{n}e…
+
+<a href="/question/23226531/answer/79301478" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+前面的回答都是非平衡统计力学的内容。不过最简单的平衡态中也会出现对于涨落耗散定理的理解具有启发的例子。<br>从正则系综的配分函数开始：<img src="//www.zhihu.com/equation?tex=Z%3D%5CSigma+_%7Bn%7De%5E%7B-%5Cbeta+E_n%7D" alt="Z=\Sigma _{n}e^{-\beta E_n}" eeimg="1"><br>系统的能量的平均值为：<img src="//www.zhihu.com/equation?tex=%5Clangle+E+%5Crangle%3D%5CSigma_n+E_%7Bn%7DP_%7Bn%7D%3D%5CSigma_n+%5Cfrac%7BE_%7Bn%7De%5E%7B-%5Cbeta+E_n%7D%7D%7BZ%7D" alt="\langle E \rangle=\Sigma_n E_{n}P_{n}=\Sigma_n \frac{E_{n}e^{-\beta E_n}}{Z}" eeimg="1"><br>整理得到<img src="//www.zhihu.com/equation?tex=%5Clangle+E+%5Crangle%3D-%5Cfrac%7B%5Cpartial+lnZ%7D%7B%5Cpartial+%5Cbeta%7D" alt="\langle E \rangle=-\frac{\partial lnZ}{\partial \beta}" eeimg="1"><br>涨落的定义为方差， <img src="//www.zhihu.com/equation?tex=%5CDelta+E%5E%7B2%7D%3D%5Clangle+E%5E%7B2%7D+%5Crangle-%5Clangle+E+%5Crangle%5E%7B2%7D" alt="\Delta E^{2}=\langle E^{2} \rangle-\langle E \rangle^{2}" eeimg="1"><br>应用简单的求导法则：<br><img src="//www.zhihu.com/equation?tex=%5Cfrac%7B%5Cpartial%5E%7B2%7D+lnZ%7D%7B%5Cpartial+%5Cbeta%5E%7B2%7D%7D%3D%5Cfrac%7B1%7D%7BZ%7D%5Cfrac%7B%5Cpartial%5E%7B2%7DZ%7D%7B%5Cpartial%5E%7B2%7D%5Cbeta%7D-%5Cfrac%7B1%7D%7BZ%5E%7B2%7D%7D%28%5Cfrac%7B%5Cpartial+Z%7D%7B%5Cpartial+%5Cbeta%7D%29%5E%7B2%7D" alt="\frac{\partial^{2} lnZ}{\partial \beta^{2}}=\frac{1}{Z}\frac{\partial^{2}Z}{\partial^{2}\beta}-\frac{1}{Z^{2}}(\frac{\partial Z}{\partial \beta})^{2}" eeimg="1"><br>发现它就是涨落<img src="//www.zhihu.com/equation?tex=%5CDelta+E%5E%7B2%7D" alt="\Delta E^{2}" eeimg="1">, 因为<img src="//www.zhihu.com/equation?tex=C_%7BV%7D%3Dd%5Clangle+E+%5Crangle%2FdT" alt="C_{V}=d\langle E \rangle/dT" eeimg="1">, <br><br>涨落和热容有如下关系， <img src="//www.zhihu.com/equation?tex=%5CDelta+E%5E%7B2%7D%3Dk_%7BB%7DT%5E2C_%7BV%7D" alt="\Delta E^{2}=k_{B}T^2C_{V}" eeimg="1"><br>上面的推导没有任何的特殊假定<br>都是统计物理里面最基本的推导。<br>但是结论却是有启发意义的，能量涨落和描述吸收放出能量能力的热容有一个正比的对应，也就是说在温度一样时，系统吸热放热的能力越强，其能量的涨落也就越大。算是涨落耗散定理在平衡态下的一个直观的说明吧。<br>抛砖引玉。。。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="27147825-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/23226531/answer/79301478">发布于 2015-12-30</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="16493959"
+data-atoken="52722559"
+data-collapsed="0"
+data-created="1435250217"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/52722559">
+<meta itemprop="answer-id" content="16493959">
+<meta itemprop="answer-url-token" content="52722559">
+<a class="zg-anchor-hidden" name="answer-16493959"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">5</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="5">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">5</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/23226531/answer/52722559">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+涨落耗散定理是统计物理中非常重要而且有意思的话题，一方面在于深入地理解近平衡体系中响应与关联的关系；另一方面在于非平衡态体系中的涨落耗散关系。 （注：以下内容均源自Lubensky的Principles of Condensed Matter Physics。该书作为经典，有着极强的…
+
+<a href="/question/23226531/answer/52722559" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+涨落耗散定理是统计物理中非常重要而且有意思的话题，一方面在于深入地理解近平衡体系中响应与关联的关系；另一方面在于非平衡态体系中的涨落耗散关系。<br><br>（注：以下内容均源自Lubensky的Principles of Condensed Matter Physics。该书作为经典，有着极强的逻辑性，但同时又有着异常晦涩的表达。以下可以算作我学习相关章节的一些注记，真要学习相关内容还应该自己去啃原作。）<br><br>对于第一点，近平衡态中的（或者说一般意义上的）涨落耗散定理的核心在于<b>时间反演对称性</b>。<br>先举几个<b>唯象</b>的例子来体现时间反演对称性在涨落耗散关系中的作用。<br>1）液体中的单个粒子，比如布朗运动、液体中的简谐振子等：<br>其运动方程中有一项黏滞力<img src="//www.zhihu.com/equation?tex=f%3D-%5Calpha+v" alt="f=-\alpha v" eeimg="1">,即<img src="//www.zhihu.com/equation?tex=%5Cfrac%7Bdp%7D%7Bdt%7D+%3D-%5Calpha+%5Cfrac%7Bp%7D%7Bm%7D+" alt="\frac{dp}{dt} =-\alpha \frac{p}{m} " eeimg="1"><br>动量p具有负的（奇的）时间反演对称性，而力f具有正的（偶的）时间反演对称性，正是这一项的存在使得该方程可以描述系统的耗散。<br>（注：耗散即能量单方向从一个自由度流向其他微观自由度，从而定义了时间的方向）<br><br>2）密度的扩散<br>粒子数守恒方程：<img src="//www.zhihu.com/equation?tex=%5Cfrac%7Bd%5Crho+%7D%7Bdt%7D%3D-+div%28J%29" alt="\frac{d\rho }{dt}=- div(J)" eeimg="1"><br>通过唯象模型Fick定律：<img src="//www.zhihu.com/equation?tex=J%3D-Dgrad%28%5Crho+%29" alt="J=-Dgrad(\rho )" eeimg="1"><br>从而得到扩散方程：<img src="//www.zhihu.com/equation?tex=%5Cfrac%7Bd%5Crho+%7D%7Bdt%7D%3D-D%5CDelta+%5Crho++" alt="\frac{d\rho }{dt}=-D\Delta \rho  " eeimg="1"><br>( 手头没有书，公式可能有点问题。另外，知乎上的公式编辑器怎么打梯度算符啊，就是倒三角...)<br>J 是密度流，显然有负的时间反演对称性（类似与前述的动量）；而密度及其梯度自然都是正的时间反演对称性。 至此，该模型可以很好地描述（粒子数）扩散现象。<br><br>由运动方程和扩散方程可以给出关联函数。<br>对于液体中地单个粒子，可以施加一个外力；对于扩散，（广义的）外力为一个外加的化学势分布。由此出发可以求出这些模型（在频域上）的响应函数。从而得到涨落耗散关系。<br>（注：这里写的太过模糊，真实的情况要复杂很多，以后有时间再补充）<br><br>我同意 <a data-hash="9442f011c62c6ea07418d16cf803dd64" href="//www.zhihu.com/people/9442f011c62c6ea07418d16cf803dd64" class="member_mention" data-hovercard="p$b$9442f011c62c6ea07418d16cf803dd64">@sym physicheng</a> 的理解，通过粒子碰撞体系去理解涨落耗散定理非常直观，但事实上，涨落耗散关系可以直接从量子力学出发，用含时微扰的方法，将某个感兴趣的微观自由度对外场的展开到第一阶（所以又叫线性响应理论），可以得到Green-Kubo方程：<br><blockquote>参看：<a href="//link.zhihu.com/?target=https%3A//en.wikipedia.org/wiki/Kubo_formula" class=" wrap external" target="_blank" rel="nofollow noreferrer">Kubo formula<i class="icon-external"></i></a></blockquote>更进一步，线性响应理论建立了响应函数与各个微观自由度之间的对易关系。微观自由度的时间反演对称性决定了能量传递的方向（即耗散），对易关系决定了相关性（即涨落）。<br><br><br>对于第二点，非平衡态体系中的涨落耗散关系为该体系定义了一个<b>有效</b>温度。<br>我们知道普通的涨落耗散定理中，连接涨落与耗散的是温度；对于非平衡态体系，热力学的温度不再决定体系的统计性质；如果涨落耗散关系仍然成立，可以通过其定义一个有效温度，从而为非平衡态统计建立一个类似与平衡态统计的出发点。<br>至于为什么在很多非平衡态体系中涨落耗散关系仍然成立，我不知道，也许 <a data-hash="accec81603a4cdc8ffb5d19c4d7f10a9" href="//www.zhihu.com/people/accec81603a4cdc8ffb5d19c4d7f10a9" class="member_mention" data-tip="p$b$accec81603a4cdc8ffb5d19c4d7f10a9" data-hovercard="p$b$accec81603a4cdc8ffb5d19c4d7f10a9">@孤子波</a>的回答给出了正确的理解。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="16493959-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2015-06-26" target="_blank" href="/question/23226531/answer/52722559">编辑于 2015-06-26</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="23467751"
+data-atoken="70118293"
+data-collapsed="0"
+data-created="1446220041"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/70118293">
+<meta itemprop="answer-id" content="23467751">
+<meta itemprop="answer-url-token" content="70118293">
+<a class="zg-anchor-hidden" name="answer-23467751"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">2</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/bo-shi-89-34" target="_blank" data-hovercard="p$t$bo-shi-89-34"
+
+><img src="https://pic2.zhimg.com/5dc397c0be69bebd37006baae4e92ecd_s.png"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$bo-shi-89-34"
+target="_blank" href="/people/bo-shi-89-34"
+>博士</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="2">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">2</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="博士" data-entry-url="/question/23226531/answer/70118293">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+1..依据我最近的小小了解来说 涨落耗散定理 就是: 已知涨落的 性质(涨落的自相关函数) 与系统温度 就可以求得 系统的耗散系数 b 当有一恒定外力f0 推动其中的物体 则物体移动的终端速度Vd= f0 /b 反过来说 已知系统的耗散性质 也可以通过涨落耗散定理 求得…
+
+<a href="/question/23226531/answer/70118293" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+1..依据我最近的小小了解来说<br>涨落耗散定理 就是:<br><br>已知涨落的​​性质(涨落的自相关函数) 与系统温度<br>就可以求得 系统的耗散系数 b<br>当有一恒定外力f0  推动其中的物体  则物体移动的终端速度Vd= f0 /b<br><br>反过来说  已知系统的耗散性质  也可以通过涨落耗散定理  求得系统的涨落<br><br><br><br><br>2..而为什们涨落耗散定理会成立 如果以物理直观来理解<br>我是这样了解的:<br><br>当一个布朗粒子受到的涨落力越大  就表示周围水分子对它的碰撞力道就越大<br>所以当我用外力去推动此布朗粒子  使他前进时   前方来撞击它的水分子  力道也会比较大<br>因此阻力就会比较大<br>故涨落大  阻力就大  而且他们的大小都是来源于同一个原因(即周围的分子碰撞力道大小)<br>故涨落耗散定理成立<br><br><br><br><br>3..涨落耗散定理 的内涵是说 :<br><br>用不同的角度去看"分子的碰撞力力道"   会看到不同的现象<br>从阻力的角度去看  它就是造成耗散的原因<br>从推力的角度去看  它就是造成涨落的原因<br><br>既然耗散与涨落都是同一个东西"分子的碰撞力力道"<br>只是看的角度不同<br><br>那么涨落和耗散間   有一固定的关系(漲落耗散定理)   也就不会觉得奇怪了!!<br><br><br><br><br>4..但是<br>究竟如何在已知涨落的​​​​性质下   推算出阻尼系数  我也还在苦恼中<br>因为我对涨落耗散定理还不太了解   也不知道如何使用它<br><br>有够苦恼的  所以现在也正在  知乎  发问中!!!!
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="23467751-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2015-10-30" target="_blank" href="/question/23226531/answer/70118293">编辑于 2015-10-30</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="4982622"
+data-atoken="24305875"
+data-collapsed="0"
+data-created="1397088362"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/24305875">
+<meta itemprop="answer-id" content="4982622">
+<meta itemprop="answer-url-token" content="24305875">
+<a class="zg-anchor-hidden" name="answer-4982622"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">4</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+<span class="name">匿名用户</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="4">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">4</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="匿名用户" data-entry-url="/question/23226531/answer/24305875">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+感谢多人邀请。 我把 <a data-hash="772bfccd2f751a67f85509b33b9ecd88" href="//www.zhihu.com/people/772bfccd2f751a67f85509b33b9ecd88" class="member_mention" data-tip="p$b$772bfccd2f751a67f85509b33b9ecd88" data-hovercard="p$b$772bfccd2f751a67f85509b33b9ecd88">@傅渥成</a>在评论里的补充加到了问题补充，而且添加了两个“话题”。 我觉得目前这个是一个话题（topic），不是一个问题（至少不是一个“知乎式”的问题），因此不是一问一答可以完整解答的，除非我在答案里写了一整章书。作为一个话题，…
+
+<a href="/question/23226531/answer/24305875" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+感谢多人邀请。<br><br>我把 <a data-hash="772bfccd2f751a67f85509b33b9ecd88" href="//www.zhihu.com/people/772bfccd2f751a67f85509b33b9ecd88" class="member_mention" data-tip="p$b$772bfccd2f751a67f85509b33b9ecd88" data-hovercard="p$b$772bfccd2f751a67f85509b33b9ecd88">@傅渥成</a>在评论里的补充加到了问题补充，而且添加了两个“话题”。<br><br>我觉得目前这个是一个话题（topic），不是一个问题（至少不是一个“知乎式”的问题），因此不是一问一答可以完整解答的，除非我在答案里写了一整章书。作为一个话题，这更适合workshop探讨和相互学习。我个人知识也有限，只能谈我的不完整的理解。哪怕是这点理解，也实在没有时间一次性讲完，所以我会慢慢地把这个答案补充起来。<br><br>为什么要对这个定理的“普遍适用性”产生惊讶？<br><br>可以特别无聊地解释：涨落耗散定理是一个非平衡的理论，但适用的是很轻微的非平衡。轻微到什么程度？轻微到涨落耗散定理能适用的程度。所以它显得总是适用。<br><br>换句话说，这个定理本身的限定就是在一个无限接近平衡的领域内，只要这个偏离平衡的扰动小到不改变体系松弛速率这个定理的一切就成立。可是到底多小的扰动才不改变体系的松弛速率？一个更加general的想象应该是，哪怕多小的扰动都或多或少地会改变体系的松弛速率。涨落耗散理论严格来讲就只是一个asymptotic case。<br><br>不适用的情况更普遍。<br><br>但是，确实仍然有值得惊讶的例子。那就是远离平衡的体系，似乎也有类似涨落耗散定理的关系。我可以从我研究的领域举两个例子，一个是自身远离平衡体系，另一个是外驱动（driven）远离平衡的体系。我只介绍涨落耗散关系（fluctuation-dissipation relationship）怎样体现在这两个例子当中。我感觉，学界真正会take it seriously的、值得探讨的所谓FDT适用性的“惊人普遍性”，应该是指这种远离平衡的情况。<br><br>待续（04-10-2014）。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="4982622-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" data-tooltip="s$t$发布于 2014-04-10" target="_blank" href="/question/23226531/answer/24305875">编辑于 2014-04-10</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>4 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="15141648"
+data-atoken="49356436"
+data-collapsed="0"
+data-created="1432865379"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/49356436">
+<meta itemprop="answer-id" content="15141648">
+<meta itemprop="answer-url-token" content="49356436">
+<a class="zg-anchor-hidden" name="answer-15141648"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/cz-michael" target="_blank" data-hovercard="p$t$cz-michael"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$cz-michael"
+target="_blank" href="/people/cz-michael"
+>CZ Michael</a></span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="3">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">3</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="CZ Michael" data-entry-url="/question/23226531/answer/49356436">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+因为涨落和耗散的起源是一样的，比如Brownian motion中，diffusion coefficient （D）和粘滞系数（ζ）之间有D=kT/ζ，这就是一种涨落耗散关系，很显然二者之所以能联系在一起，是因为有共同的起源（driving force），即thermal agitation kT
+
+<a href="/question/23226531/answer/49356436" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+因为涨落和耗散的起源是一样的，比如Brownian motion中，diffusion coefficient （D）和粘滞系数（ζ）之间有D=kT/ζ，这就是一种涨落耗散关系，很显然二者之所以能联系在一起，是因为有共同的起源（driving force），即thermal agitation kT
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="15141648-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/23226531/answer/49356436">发布于 2015-05-29</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>1 条评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="35626138"
+data-atoken="100434529"
+data-collapsed="0"
+data-created="1462984938"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/100434529">
+<meta itemprop="answer-id" content="35626138">
+<meta itemprop="answer-url-token" content="100434529">
+<a class="zg-anchor-hidden" name="answer-35626138"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">0</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/yzcj105yzcj105" target="_blank" data-hovercard="p$t$yzcj105yzcj105"
+
+><img src="https://pic1.zhimg.com/da8e974dc_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$yzcj105yzcj105"
+target="_blank" href="/people/yzcj105yzcj105"
+>yzcj105yzcj105</a></span><span title="爱打比方" class="bio">
+爱打比方
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info empty" data-votecount="0">
+
+
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="yzcj105yzcj105" data-entry-url="/question/23226531/answer/100434529">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+赞同上面博士，还有师弟 <a data-hash="9442f011c62c6ea07418d16cf803dd64" href="//www.zhihu.com/people/9442f011c62c6ea07418d16cf803dd64" class="member_mention" data-hovercard="p$b$9442f011c62c6ea07418d16cf803dd64">@sym physicheng</a>的回答 我补充两个具体的例子： Cv与能量涨落成正比 系统的能量总是一个带极小展宽的高斯分布，由于碰撞，会有一种将展宽变大的趋势（涨落），而当一些点跑出原来分布时，由于碰撞又很快被拉回去了（耗散），如果涨…
+
+<a href="/question/23226531/answer/100434529" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+赞同上面博士，还有师弟 <a data-hash="9442f011c62c6ea07418d16cf803dd64" href="//www.zhihu.com/people/9442f011c62c6ea07418d16cf803dd64" class="member_mention" data-hovercard="p$b$9442f011c62c6ea07418d16cf803dd64">@sym physicheng</a>的回答<br>我补充两个具体的例子：<br>Cv与能量涨落成正比<br>系统的能量总是一个带极小展宽的高斯分布，由于碰撞，会有一种将展宽变大的趋势（涨落），而当一些点跑出原来分布时，由于碰撞又很快被拉回去了（耗散），如果涨落大于耗散，那么能量展宽就会越来越宽，根本不会平衡，不物理。所以耗散与涨落就是在竞争中平衡的。<br>如果我们将孤立系统分成A,B两部分，Ea+Eb是一个常数，但是Ea本身会有涨落，如果A的能量变为Ea+DeltaE,那么B的能量就是Eb-DeltaE，那么温差正比于DeltaE/Cv, 恢复平衡的速度与温差相关。为了平衡，A得将DeltaE的能量传给B，如果Cv比较小，AB温差大，那么B吸热非常快，A放得也快，那么当稍有一点能量不均衡DeltaE，就立马被扼杀在摇篮里，这样涨落就大不起来了。反之，Cv很大，AB温差小，A放热非常慢，B吸得慢，那么A B之间的能量差就会积聚，使得涨落也增大。所以比热大小决定耗散速度。<br>对于扩散也差不多，分A,B两部分，如果A的浓度高了，B的低了，那么粘滞系数越大，那么恢复平衡就越难，那么贫富差就比较容易维持，导致大的浓度涨落。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="35626138-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/23226531/answer/100434529">发布于 2016-05-12</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+<div tabindex="-1" class="zm-item-answer  zm-item-expanded"
+
+itemscope itemtype="http://schema.org/Answer"
+data-aid="7123228"
+data-atoken="29349557"
+data-collapsed="0"
+data-created="1408340798"
+data-deleted="0"
+data-helpful="1"
+data-isowner="0"
+data-copyable="1"
+
+>
+<link itemprop="url" href="/question/23226531/answer/29349557">
+<meta itemprop="answer-id" content="7123228">
+<meta itemprop="answer-url-token" content="29349557">
+<a class="zg-anchor-hidden" name="answer-7123228"></a>
+
+
+<div class="zm-votebar">
+<button class="up ">
+<i class="icon vote-arrow"></i>
+<span class="count">3</span>
+<span class="label sr-only">赞同</span>
+</button>
+<button class="down ">
+<i class="icon vote-arrow"></i>
+<span class="label sr-only">反对</span>
+</button>
+</div>
+
+
+<div class="answer-head">
+<div class="zm-item-answer-author-info">
+
+<a class="zm-item-link-avatar avatar-link"
+
+href="/people/gu-zi-bo" target="_blank" data-hovercard="p$t$gu-zi-bo"
+
+><img src="https://pic4.zhimg.com/8a68ec244b1d125dc6abf1b9b20f1e93_s.jpg"
+class="zm-list-avatar avatar"
+></a>
+
+<span class="summary-wrapper">
+<span class="author-link-line">
+
+<a class="author-link"
+data-hovercard="p$t$gu-zi-bo"
+target="_blank" href="/people/gu-zi-bo"
+>孤子波</a></span><span title="用热力学第二定律武装自己" class="bio">
+用热力学第二定律武装自己
+</span>
+</span>
+</div>
+<div class="zm-item-vote-info" data-votecount="3">
+
+
+
+<span class="voters text"><a href="#" class="more text"><span class="js-voteCount">3</span>&nbsp;人赞同</a></span>
+
+
+</div>
+</div>
+<div class="zm-item-rich-text expandable js-collapse-body" data-resourceid="1471880" data-action="/answer/content" data-author-name="孤子波" data-entry-url="/question/23226531/answer/29349557">
+
+
+<div class="zh-summary summary clearfix" style="display:none;">
+
+虽然非平衡态热力学并非我的研究方向，但是我对这个问题非常有兴趣，然后想从另一个角度去讨论这个问题。 楼主的问题是：涨落耗散定理本来是一个描述接近平衡状态的理论，但是在很多非平衡或是远离平衡的状态下却依然有实用性，这是为什么呢？ 解答这个问题…
+
+<a href="/question/23226531/answer/29349557" class="toggle-expand">显示全部</a>
+
+</div>
+
+
+<div class="zm-editable-content clearfix">
+虽然非平衡态热力学并非我的研究方向，但是我对这个问题非常有兴趣，然后想从另一个角度去讨论这个问题。<br>楼主的问题是：涨落耗散定理本来是一个描述接近平衡状态的理论，但是在很多非平衡或是远离平衡的状态下却依然有实用性，这是为什么呢？<br><br>解答这个问题，我想提到一个人以及他的相关工作，那就是普里戈金的耗散结构理论。<br><br>耗散结构理论，简单说就是如果我们将系统推向离平衡态更远的地方，系统可能演化出更多新的稳定有序结构。而涨落耗散定理是一个桥梁，描述了不可逆过程中能量耗散和热平衡状态热涨落之间的关系。<br><br>简单地说，耗散结构理论告诉我们，我们这个世界存在着很多有序的结构，这是一个普适理论。而涨落耗散定理是描述这些有序结构其中的能量关系的理论，所以这也是一个普适理论。<br><br>举个例子，我们知道大自然的温度差引发了压力差，有压力差，就形成了常见的"风"，耗散结构理论解释了在压力差比较极端的情况下会形成新的有序结构----”龙卷风“。既然有序，那么我们自然可以用涨落耗散定理这种基本理论去描述这种现象。
+</div>
+
+
+</div>
+<a class="zg-anchor-hidden ac" name="7123228-comment"></a>
+<div class="zm-item-meta answer-actions clearfix js-contentActions">
+<div class="zm-meta-panel">
+
+<a itemprop="url" class="answer-date-link meta-item" target="_blank" href="/question/23226531/answer/29349557">发布于 2014-08-18</a>
+
+<a href="#" name="addcomment" class="meta-item toggle-comment js-toggleCommentBox">
+<i class="z-icon-comment"></i>添加评论</a>
+
+
+<a href="#" class="meta-item zu-autohide js-thank" data-thanked="false"><i class="z-icon-thank"></i>感谢</a>
+
+
+
+<a href="#" class="meta-item zu-autohide js-share"><i class="z-icon-share"></i>分享</a>
+
+<a href="#" class="meta-item zu-autohide js-collect"><i class="z-icon-collect"></i>收藏</a>
+
+
+
+
+
+<span class="zg-bull zu-autohide">&bull;</span>
+
+<a href="#" class="meta-item zu-autohide js-noHelp">没有帮助</a>
+
+<span class="zg-bull zu-autohide">&bull;</span>
+<a href="#" class="meta-item zu-autohide js-report">举报</a>
+
+
+
+
+<meta name="copyrightStatus" content="1">
+<meta name="disableCopyAvatar" content="">
+
+<span class="zg-bull">&bull;</span>
+
+<a href="/terms#sec-licence-1" target="_blank" class="meta-item copyright">
+作者保留权利
+</a>
+
+
+</div>
+</div>
+</div>
+
+
+</div>
+
+<div id="zh-question-collapsed-link" class="zu-question-collap-title" style="display:none" >
+<a href="javascript:;" name="expand" class="zg-link-gray" id="zh-question-collapsed-switcher">
+<span id="zh-question-collapsed-num">0</span> 个回答被折叠
+</a>
+（<a target="_blank" href="/question/20120168" class="zg-link-gray">为什么？</a>）
+</div>
+<div id="zh-question-collapsed-wrap" class="zh-question-answer-wrapper" style="display:none"></div>
+<a name="draft"></a>
+<div id="zh-question-answer-form-wrap" class="zh-question-answer-form-wrap">
+<div class="zm-editable-tip"></div>
+<div class="zm-editable-content"></div>
+</div>
+<!-- 版权演示 -->
+
+<script type="text/x-template" id="copyright-demo-template">
+<article>
+
+<section>
+<p class="copyright-demo-title"> 这是你的回答正文 </p>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section>
+<p class="copyright-demo-title"> 当其他人想复制你的一段回答 </p>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region1">
+<span class="copyright-ico-indicator" id="copyright-demo-indicator"></span>
+</div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region2"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region3"></div>
+<div class="copyright-demo-region frame2-region" id="copyright-demo-region4"></div>
+<div class="copyright-demo-region"></div>
+</section>
+
+<section id="copyright-demo-frame3">
+<p class="copyright-demo-title copyright-demo-effect"> 复制将受限，同时会弹出提醒 </p>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region copyright-demo-region-selected"></div>
+<div class="copyright-demo-region"></div>
+<span class="copyright-ico-pointer copyright-demo-pointer"></span>
+</section>
+</article>
+</script>
+
+
+<script type="text/template" class="oauth-success-template--wechat">
+<div class="oauth-success oauth-success--wechat">
+<img src="/static/img/zhihu_wechat.png" class="oauth-success-image">
+<h2 class="oauth-success-title">成功绑定微信帐号</h2>
+<p class="oauth-success-tip">下次登录知乎可直接使用「微信快捷登录」</p>
+</div>
+</script>
+
+
+</div>
+</div>
+
+
+<div class="zu-main-sidebar" data-za-module="RightSideBar">
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div class="SignFlow SignFlow--bordered" id="SidebarSignFlow">
+<div class="SignFlow-panel">
+<div class="title register">
+<h1>加入知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view register SignupForm" data-za-module="SignUpForm">
+<form action="/register/email" method="POST">
+<div class="input-wrapper">
+<input type="text" name="fullname" aria-label="姓名" data-placeholder="姓名" required>
+</div>
+<div class="input-wrapper">
+
+<input type="text" name="phone_num" class="account" aria-label="手机号（仅支持中国大陆）" data-placeholder="手机号（仅支持中国大陆）" required>
+
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" hidden> 
+<input type="password" name="password" aria-label="密码" data-placeholder="密码（不少于 6 位）" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="注册" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<span>已有帐号？<a href="#" class="switch-to-login">登录</a></span>
+</div>
+</form>
+</div>
+</div>
+<div class="SignFlow-panel" hidden>
+<div class="LoginForm">
+<div class="title login">
+<h1>登录知乎</h1>
+<h2>与世界分享你的知识、经验和见解</h2>
+</div>
+<div class="view login" data-za-module="SignInForm">
+<form method="POST">
+<div class="input-wrapper">
+<input type="text" name="account" class="account" aria-label="手机号或邮箱" placeholder="手机号或邮箱" required>
+</div>
+<div class="input-wrapper toggle-password">
+<input type="password" name="password" aria-label="密码" placeholder="密码" required>
+<span class="z-ico-show-password"></span>
+</div>
+<div class="input-wrapper captcha-module" data-type="en" >
+<input id="captcha" name="captcha" placeholder="验证码" required data-rule-required="true" data-msg-required="请填写验证码">
+<div class="captcha-container">
+
+<img class="js-refreshCaptcha captcha" width="120" height="30" data-tooltip="s$t$看不清楚？换一张"  alt="验证码">
+</div>
+</div>
+<div class="actions">
+
+<input type="submit" value="登录" class="submit zg-btn-blue">
+
+</div>
+<div class="sns clearfix">
+<label class="remember-me"><input type="checkbox" name="remember_me" checked value="true">记住我</label>
+<span class="middot">·</span>
+<button class="unable-login" type="button">无法登录？</button>
+<button type="button" class="js-show-sns-buttons is-visible">社交帐号登录</button>
+<div class="sns-buttons">
+<button type="button" class="wechat"><span class="ico sprite-global-icon-wechat-gray"></span>微信</button>
+<button type="button" class="weibo"><span class="ico sprite-global-icon-weibo-gray"></span>微博</button>
+<button type="button" class="qq"><span class="ico sprite-global-icon-qq-gray"></span>QQ</button>
+</div>
+</div>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="zm-side-section">
+<div class="DownloadApp">
+<button class="DownloadApp-button">
+<span class="sprite-global-icon-qrcode"></span>
+下载知乎 App
+</button>
+</div>
+</div>
+
+
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner zg-gray-normal" id="zh-question-side-header-wrap">
+<button data-follow="q:m:button" class="follow-button zg-follow zg-btn-green" data-id="1471880">关注问题</button>
+
+379
+人关注该问题
+
+</div>
+</div>
+
+
+<div class="shameimaru-placeholder" data-loc="question_up" data-params='{&quot;question_token&quot;: 23226531}'></div>
+
+<div class="zm-side-section">
+<div class="zm-side-section-inner">
+<div id="zh-question-related-questions" class="zh-question-related-questions clearfix" data-za-module="RelatedQuestions">
+
+<a class="zg-right next">换一换</a>
+
+<h3>相关问题</h3>
+<ul itemprop="relatedQuestion" itemscope itemtype="http://schema.org/ItemList">
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/19714540" data-id="65860" data-za-element-name="Title">
+如何理解傅里叶变换公式？
+</a> <span class="num">76 个回答</span><meta itemprop="followerCount" content="4712" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/26786460" data-id="2897498" data-za-element-name="Title">
+拓扑学在物理研究中有哪些具体应用？
+</a> <span class="num">15 个回答</span><meta itemprop="followerCount" content="1368" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/20465361" data-id="366538" data-za-element-name="Title">
+光是如何知道哪条路线最快的，费马原理是不是违背常理呢？
+</a> <span class="num">121 个回答</span><meta itemprop="followerCount" content="3216" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/27434424" data-id="3156611" data-za-element-name="Title">
+熵增理论在经济学中如何应用？有相关研究成果吗？
+</a> <span class="num">9 个回答</span><meta itemprop="followerCount" content="314" />
+</li>
+
+<li itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21838758" data-id="916376" data-za-element-name="Title">
+把一张纸捏成一个球，球的大小和纸的大小有什么关系？
+</a> <span class="num">12 个回答</span><meta itemprop="followerCount" content="664" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/20736805" data-id="475210" data-za-element-name="Title">
+地震局有什么用？
+</a> <span class="num">135 个回答</span><meta itemprop="followerCount" content="1085" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/28399313" data-id="3542373" data-za-element-name="Title">
+如何理解自由能？
+</a> <span class="num">5 个回答</span><meta itemprop="followerCount" content="169" />
+</li>
+
+<li hidden itemprop="itemListElement" itemscope itemtype="http://schema.org/Question">
+<a class="question_link" href="/question/21054944" data-id="602548" data-za-element-name="Title">
+为什么圆周率 π 在各种物理数学公式里面经常出现？
+</a> <span class="num">19 个回答</span><meta itemprop="followerCount" content="506" />
+</li>
+
+</ul>
+</div>
+</div>
+</div>
+
+<div class="zm-side-section" data-za-module="RelatedLives">
+<div class="SidebarListNav SidebarListNav--noFollowLink zm-side-section-inner">
+<h3>相关 Live 推荐 ⚡️</h3>
+<ul class="SidebarListNav-list">
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/799632812935380992" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic2.zhimg.com/bdca8c03d_s.jpg" srcset="https://pic2.zhimg.com/bdca8c03d_xs.jpg 2x" alt="量子纠缠与贝尔不等式" />
+<span class="SidebarListNav-label">
+量子纠缠与贝尔不等式
+</span>
+</a>
+</li>
+
+<li class="SidebarListNav-listItem" data-za-module="LiveItem" data-za-index>
+<a class="SidebarListNav-itemLink" href="https://www.zhihu.com/lives/778993106937716736" target="_blank">
+<img class="Avatar SidebarListNav-avatar" src="https://pic1.zhimg.com/c096f565bad088a2b709d460f066e1dc_s.jpg" srcset="https://pic1.zhimg.com/c096f565bad088a2b709d460f066e1dc_xs.jpg 2x" alt="集体行为的数学模型" />
+<span class="SidebarListNav-label">
+集体行为的数学模型
+</span>
+</a>
+</li>
+
+</ul>
+</div>
+</div>
+
+
+<div class="shameimaru-placeholder" data-loc="question_down" data-params='{&quot;question_token&quot;: 23226531}'></div>
+
+</div>
+
+
+</div>
+
+
+<div id="zh-footer" class="zh-footer">
+<div class="content zg-wrap clearfix">
+<ul>
+
+<li><a href="https://liukanshan.zhihu.com" target="_blank">刘看山</a></li>
+
+<li><a href="/app" target="_blank">移动应用</a></li>
+<li><a href="/careers">加入知乎</a></li>
+<li><a href="/terms" target="_blank">知乎协议</a></li>
+<li><a href="/jubao" target="_blank">举报投诉</a></li>
+<li><a href="/contact">联系我们</a></li>
+
+</ul>
+
+<span class="copy">&copy; 2017 知乎</span>
+
+</div>
+</div>
+
+<script type="text/json" class="json-inline" data-name="guiders2">{}</script>
+<script type="text/json" class="json-inline" data-name="current_user">["","","","-1","",0,0]</script>
+<script type="text/json" class="json-inline" data-name="user_status">[null,null,false]</script>
+<script type="text/json" class="json-inline" data-name="env">["zhihu.com","comet.zhihu.com",false,null,false,false]</script>
+<script type="text/json" class="json-inline" data-name="permissions">[]</script>
+
+
+<script type="text/json" class="json-inline" data-name="ga_vars">{"user_created":0,"now":1487116938000,"abtest_mask":"------------------------------","user_attr":[0,0,0,"-","-"],"user_hash":0}</script>
+
+<script type="text/json" class="json-inline" data-name="ra-urls">{"Copyright":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Copyright.98ac6609.js","PayUIApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PayUIApp.ca78ba78.js","CouponApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CouponApp.66b486a6.js","PaymentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/PaymentApp.7f16d61c.js","Community":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Community.a79a5745.js","Report":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/Report.26635627.js","OrgOpHelp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/OrgOpHelp.f1709e97.js","common":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/common.a4dd3236.js","BalanceApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/BalanceApp.14e3a013.js","AnswerWarrant":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/AnswerWarrant.97f134aa.js","CommentApp":"https:\/\/static.zhihu.com\/static\/revved\/-\/apps\/CommentApp.7556991d.js"}</script>
+
+<script type="text/json" class="json-inline" data-name="current_question">{"status":"normal","editPermission":false,"qid":1471880,"askAboutMember":0,"isEditLocked":false,"detailEditReasonRequired":true,"isAnon":0,"showInvitePanel":false,"isOrg":false,"isLocked":0,"urlToken":23226531}</script>
+<script type="text/json" class="json-inline" data-name="current_question_owner">false</script>
+<script type="text/json" class="json-inline" data-name="draft">[]</script>
+<script type="text/json" class="json-inline" data-name="my_answer">{}</script>
+<script type="text/json" class="json-inline" data-name="current_question_bio">{"selected_bio":null,"type":null,"value":""}</script>
+
+<script type="text/json" class="json-inline" data-name="redirect_to">""</script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/vendor.cb14a042.js"></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/base.ddce07d2.js"></script>
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/common.6dfad566.js"></script>
+
+
+<script src="https://static.zhihu.com/static/revved/-/js/closure/richtexteditor.6e9b26a4.js" async></script>
+<script src="https://static.zhihu.com/static/revved/-/js/closure/page-main.ef470b23.js"></script>
+<meta name="entry" content="ZH.entrySQ" data-module-id="page-main">
+
+<script type="text/zscript" znonce="05d83663455f499caacdac896f39f555"></script>
+
+<input type="hidden" name="_xsrf" value="d440a547694899b4ff928f4947230ee0"/>
+</body>
+</html>
