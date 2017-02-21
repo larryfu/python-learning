@@ -1,5 +1,5 @@
 from PIL import Image
-im = Image.open('/home/lucas/Desktop/9_.jpg')
+im = Image.open('../9_.jpg')
 im1 = im.convert('L')
 pix = im1.load()
 
