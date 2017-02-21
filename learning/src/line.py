@@ -1,4 +1,3 @@
-# 导入 matplotlib 的所有内容（nympy 可以用 np 这个名字来使用）
 from pylab import *
 
 # 创建一个 8 * 6 点（point）的图，并设置分辨率为 80
